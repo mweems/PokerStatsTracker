@@ -1,8 +1,9 @@
 import unittest
 import datetime
-from Parser import firstLineParser, parsePlayers, setLocations, getHandValue, \
-    checkFold, checkCall, checkBet, checkRaise, getFlop, getPotSize, \
-    getPlayers, getTurn, getRiver, getWinningPlayer
+
+from Parser.textParser.Parser import firstLineParser, parsePlayers, \
+    setLocations, getHandValue, checkFold, checkCall, checkBet, checkRaise, \
+    getFlop, getPotSize, getPlayers, getTurn, getRiver, getWinningPlayer
 
 
 class TestParsingFirstLine(unittest.TestCase):
