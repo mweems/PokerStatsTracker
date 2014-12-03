@@ -6,8 +6,8 @@ def _get_date(text):
     return datetime.date(int(date[0]), int(date[1]), int(date[2]))
 
 
-def _get_unique_id(text):
-    id = text.strip('#').strip(":")
+def _get_unique_number(text):
+    id = text.strip('#').strip(":").strip("#")
     return int(id)
 
 
@@ -25,7 +25,7 @@ def _get_stakes(text):
 def _to_value(text):
     if type(text) == float or type(text) == int:
         return text
-    value = text.strip(")").strip("$")
+    value = text.strip(")").strip("$").strip(",")
     return float(value)
 
 
@@ -39,11 +39,6 @@ def _convert_player_info(text):
         }
 
     }
-
-
-def _to_position(text):
-    number = text.strip("#")
-    return int(number)
 
 
 def _check_index(int):
@@ -62,7 +57,7 @@ def firstLineParser(text):
     hand = {}
     splitText = text.split()
 
-    hand['id'] = _get_unique_id(splitText[4])
+    hand['id'] = _get_unique_number(splitText[4])
     hand['date'] = _get_date(splitText[-1])
     hand['stakes'] = _get_stakes(splitText[-6])
 
@@ -82,7 +77,7 @@ def parsePlayers(text):
 
 def setLocations(text, players):
     splitText = text.split()
-    button_index = _to_position(splitText[-1])
+    button_index = _get_unique_number(splitText[-1])
     button = players[button_index]['name']
     locations = {
         "BTN": button,
@@ -158,7 +153,6 @@ def checkRaise(text):
     return raises
 
 
-
 def getFlop(text):
     splittext = text.split()
     flop = [
@@ -166,9 +160,37 @@ def getFlop(text):
         splittext[4],
         _cardValue(splittext[5])
     ]
-
     return flop
 
 
-def getPotSize(text):
-    return text
+def getPotSize(text, round):
+    splittext = text.split()
+    if round == 'flop':
+        return _to_value(splittext[8])
+    if round == 'turn':
+        return _to_value(splittext[9])
+    if round == 'river':
+        return _to_value(splittext[10])
+
+
+def getPlayers(text, round):
+    splittext = text.split()
+    if round == 'flop':
+        return _get_unique_number(splittext[9])
+    if round == 'turn':
+        return _get_unique_number(splittext[10])
+    if round == 'river':
+        return _get_unique_number(splittext[11])
+
+
+def getTurn(text, cards):
+    splittext = text.split()
+    cards.append(_cardValue(splittext[6]))
+    return cards
+
+
+def getRiver(text, cards):
+    splittext = text.split()
+    cards.append(_cardValue(splittext[7]))
+    return cards
+
