@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="testTextParser" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="testTextParser" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/testTextParser">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44148937" vertical-offset="2458" max-vertical-offset="3210">
-              <caret line="186" column="75" selection-start-line="186" selection-start-column="11" selection-end-line="186" selection-end-column="75" />
+            <state vertical-scroll-proportion="-22.576923" vertical-offset="2668" max-vertical-offset="3465">
+              <caret line="217" column="36" selection-start-line="217" selection-start-column="24" selection-end-line="217" selection-end-column="36" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -45,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Parser.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Parser.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/Parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2252" max-vertical-offset="3030">
-              <caret line="196" column="0" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.28920308" vertical-offset="705" max-vertical-offset="3525">
+              <caret line="62" column="17" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -549,12 +549,12 @@
       <changelist id="152f9c6b-4576-4057-a71b-9e2edd444ad9" name="Default" comment="" />
       <created>1417519667106</created>
       <updated>1417519667106</updated>
-      <workItem from="1417519670477" duration="33105000" />
+      <workItem from="1417519670477" duration="35037000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33105000" />
+    <option name="totallyTimeSpent" value="35037000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -627,21 +627,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/Parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2252" max-vertical-offset="3030">
-          <caret line="196" column="0" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/testTextParser">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44148937" vertical-offset="2458" max-vertical-offset="3210">
-          <caret line="186" column="75" selection-start-line="186" selection-start-column="11" selection-end-line="186" selection-end-column="75" />
+        <state vertical-scroll-proportion="-22.576923" vertical-offset="2668" max-vertical-offset="3465">
+          <caret line="217" column="36" selection-start-line="217" selection-start-column="24" selection-end-line="217" selection-end-column="36" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28920308" vertical-offset="705" max-vertical-offset="3525">
+          <caret line="62" column="17" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>

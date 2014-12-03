@@ -53,6 +53,29 @@ def _cardValue(text):
     return value
 
 
+def _winningPlayer(text):
+    splittext = text.split()
+    player = ''
+    for word in splittext:
+        previousIndex = splittext.index(word) - 1
+        if word == "wins":
+            player = splittext[previousIndex]
+    return player
+
+
+def _winningHand(text):
+    text1 = text.split("[")
+    text2 = text1[1].split("]")
+    cards = text2[0].split()
+    return [_cardValue(cards[0]), _cardValue(cards[1])]
+
+
+def _winningPot(text):
+    text1 = text.split("(")
+    text2 = text1[1].split(")")
+    return _to_value(text2[0])
+
+
 def firstLineParser(text):
     hand = {}
     splitText = text.split()
@@ -149,7 +172,7 @@ def checkRaise(text):
         previouIndex = splittext.index(word) - 1
         nextIndex = splittext.index(word) + 2
         if word == "raises":
-            raises[splittext[previouIndex]] =  _to_value(splittext[nextIndex])
+            raises[splittext[previouIndex]] = _to_value(splittext[nextIndex])
     return raises
 
 
@@ -194,3 +217,14 @@ def getRiver(text, cards):
     cards.append(_cardValue(splittext[7]))
     return cards
 
+
+def getWinningPlayer(text):
+    player = _winningPlayer(text)
+    hand = _winningHand(text)
+    pot = _winningPot(text)
+    return {
+        player: {
+            "hand": hand,
+            "pot": pot
+        }
+    }

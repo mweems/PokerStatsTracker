@@ -2,7 +2,7 @@ import unittest
 import datetime
 from Parser import firstLineParser, parsePlayers, setLocations, getHandValue, \
     checkFold, checkCall, checkBet, checkRaise, getFlop, getPotSize, \
-    getPlayers, getTurn, getRiver, getWinner
+    getPlayers, getTurn, getRiver, getWinningPlayer
 
 
 class TestParsingFirstLine(unittest.TestCase):
@@ -203,6 +203,23 @@ class TestParsingRiver(unittest.TestCase):
         numPlayer = getPlayers(self.text, "river")
         expected = 2
         self.failUnlessEqual(numPlayer, expected)
+
+
+class TestParsingWinner(unittest.TestCase):
+    text = "sampik87 shows [Jc 8d] a full house, Kings full of Jacks " \
+           "kookie4061 mucks " \
+           "sampik87 wins the pot ($0.31) " \
+           "with a full house, Kings full of Jacks"
+
+    def testGetsWinningPlayer(self):
+        player = getWinningPlayer(self.text)
+        expected = {
+            "sampik87": {
+                "hand": ["Jc", "8d"],
+                "pot": .31
+            }
+        }
+        self.failUnlessEqual(player, expected)
 
 
 if __name__ == '__main__':
