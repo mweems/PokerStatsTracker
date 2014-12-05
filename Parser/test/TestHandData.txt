@@ -1,0 +1,48 @@
+Full Tilt Poker Game #34944298551: Table Ard (New to the Game, 6 max) - NL Hold'em - $0.01/$0.02 - 08:42:02 ET - 2014/11/21
+Seat 1: kookie4061 ($8.51)
+Seat 2: sampik87 ($1.62)
+Seat 3: Burda-sergey ($2.41)
+Seat 4: mweems1 ($2)
+Seat 5: 11 Hammer 1199 ($1.38)
+Seat 6: AAlex777718 ($1.79)
+Burda-sergey posts the small blind of $0.01
+mweems1 posts the big blind of $0.02
+The button is in seat #2
+*** HOLE CARDS ***
+Dealt to mweems1 [4c 8h]
+11 Hammer 1199 folds
+AAlex777718 folds
+kookie4061 calls $0.02
+sampik87 calls $0.02
+Burda-sergey calls $0.01
+mweems1 checks
+*** FLOP *** [Kh Js 9s] (Total Pot: $0.08, 4 Players)
+Burda-sergey checks
+mweems1 checks
+kookie4061 checks
+sampik87 checks
+*** TURN *** [Kh Js 9s] [Ks] (Total Pot: $0.08, 4 Players)
+Burda-sergey checks
+mweems1 checks
+kookie4061 checks
+sampik87 bets $0.02
+Burda-sergey folds
+mweems1 folds
+kookie4061 calls $0.02
+*** RIVER *** [Kh Js 9s Ks] [Kc] (Total Pot: $0.12, 2 Players)
+kookie4061 checks
+sampik87 bets $0.10
+kookie4061 calls $0.10
+*** SHOW DOWN ***
+sampik87 shows [Jc 8d] a full house, Kings full of Jacks
+kookie4061 mucks
+sampik87 wins the pot ($0.31) with a full house, Kings full of Jacks
+*** SUMMARY ***
+Total pot $0.32 | Rake $0.01
+Board: [Kh Js 9s Ks Kc]
+Seat 1: kookie4061 mucked [9d Ac] - a full house, Kings full of Nines
+Seat 2: sampik87 (button) showed [Jc 8d] and won ($0.31) with a full house, Kings full of Jacks
+Seat 3: Burda-sergey (small blind) folded on the Turn
+Seat 4: mweems1 (big blind) folded on the Turn
+Seat 5: 11 Hammer 1199 didn't bet (folded)
+Seat 6: AAlex777718 didn't bet (folded)

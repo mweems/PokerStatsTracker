@@ -11,12 +11,9 @@ def _getUnique_number(text):
 
 
 def _getStakes(text):
-    stakes = text.split("/")
-    small = stakes[0].strip("$")
-    big = stakes[1].strip("$")
     int_stakes = {
-        "small_blind": float(small),
-        "big_blind": float(big)
+        "small_blind": float(text[0]),
+        "big_blind": float(text[1])
     }
     return int_stakes
 

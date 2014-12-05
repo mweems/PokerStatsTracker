@@ -1,1 +1,8 @@
-use pyparsing to parse text
+from pyparsing import Literal, Word, Group, OneOrMore, \
+  alphas, nums, alphanums, SkipTo, \
+  White, Combine, Or, Optional, LineEnd, \
+  GoToColumn, Forward, Keyword, oneOf, ZeroOrMore
+
+
+  use this line at the top of iterm python session
+

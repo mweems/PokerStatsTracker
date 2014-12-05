@@ -141,7 +141,6 @@ class TestPreFlopAction(unittest.TestCase):
         raisePre = {"kookie4061": .10}
         self.failUnlessEqual(pre, raisePre)
 
-
 class TestParsingFlop(unittest.TestCase):
     text = "*** FLOP *** [Kh Js 9s] (Total Pot: $0.08, 4 Players)"
 
@@ -150,18 +149,15 @@ class TestParsingFlop(unittest.TestCase):
         expectedFlop = ["Kh", "Js", "9s"]
         self.failUnlessEqual(flop, expectedFlop)
 
-
     def testParsesPotSizeOnFlop(self):
         potSize = getPotSize(self.text, "flop")
         expected = .08
         self.failUnlessEqual(potSize, expected)
 
-
     def testNumPlayersOnFlop(self):
         numPlayer = getPlayers(self.text, "flop")
         expected = 4
         self.failUnlessEqual(numPlayer, expected)
-
 
 class TestParsingTurn(unittest.TestCase):
     text = "*** TURN *** [Kh Js 9s] [Ks] (Total Pot: $0.08, 4 Players)"
@@ -176,7 +172,6 @@ class TestParsingTurn(unittest.TestCase):
         potSize = getPotSize(self.text, "turn")
         expected = .08
         self.failUnlessEqual(potSize, expected)
-
 
     def testNumPlayersOnTurn(self):
         numPlayer = getPlayers(self.text, "turn")
@@ -193,12 +188,10 @@ class TestParsingRiver(unittest.TestCase):
         expected = ["Kh", "Js", "9s", "Ks", "Kc"]
         self.failUnlessEqual(board, expected)
 
-
     def testParsesPotSizeOnRiver(self):
         potSize = getPotSize(self.text, "river")
         expected = .12
         self.failUnlessEqual(potSize, expected)
-
 
     def testNumPlayersOnriver(self):
         numPlayer = getPlayers(self.text, "river")
