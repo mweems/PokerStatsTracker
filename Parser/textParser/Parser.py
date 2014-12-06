@@ -1,27 +1,17 @@
 import helperMethods as helper
-from pyparsing import Word, Literal, nums, OneOrMore, Combine, Optional
+import parserElements as parse
+
 
 
 def firstLineParser(text):
     hand = {}
-
-    id = Literal("#").suppress() + OneOrMore(Word(nums))
-    found_id = id.searchString(text)[0][0]
-
-    num = Word(nums)
-    date = Combine(num + "/" + num + "/" + num)
-    found_date = date.searchString(text)[0][0]
-
-    decimalNum = Combine(Word(nums, nums+",") +
-                         Optional("." + OneOrMore(Word(nums))))
-    dollar = Literal("$").suppress()
-    stakes = dollar + decimalNum + Literal("/").suppress() + \
-                dollar + decimalNum
-    found_stakes = stakes.searchString(text)
+    found_id = parse.id.searchString(text)[0][0]
+    found_date = parse.date.searchString(text)[0][0]
+    found_stakes = parse.stakes.searchString(text)[0]
 
     hand['id'] = int(found_id)
     hand['date'] = helper._getDate(found_date)
-    hand['stakes'] = helper._getStakes(found_stakes[0])
+    hand['stakes'] = helper._getStakes(found_stakes)
 
     return hand
 
