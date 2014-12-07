@@ -2,7 +2,7 @@ import unittest
 import datetime
 
 from Parser.textParser.Parser import firstLineParser, parsePlayers, \
-    setLocations, getHandValue, checkFold, checkCall, checkBet, checkRaise, \
+    setButton, getHandValue, checkFold, checkCall, checkBet, checkRaise, \
     getFlop, getPotSize, getPlayers, getTurn, getRiver, getWinningPlayer
 
 
@@ -60,35 +60,12 @@ class TestParsingPreflop(unittest.TestCase):
         self.failUnlessEqual(player3, expected3)
 
 
-class TestParsingLocations(unittest.TestCase):
-    text = "Burda-sergey posts the small blind of $0.01 " \
-           "mweems1 posts the big blind of $0.02 " \
-           "The button is in seat #2"
-
-    players = {
-        1: {"name": "kookie4061", "stack": 8.51},
-        2: {"name": "sampik87", "stack": 1.62},
-        3: {"name": "Burda-sergey", "stack": 1.62},
-        4: {"name": "mweems1", "stack": 2},
-        5: {"name": "11Hammer1199", "stack": 1.38},
-        6: {"name": "AAlex777718", "stack": 1.79}
-    }
+class TestButtonLocation(unittest.TestCase):
+    text = "The button is in seat #2"
 
     def testPlayerSeatsAccurate(self):
-        locations = setLocations(self.text, self.players)
-        expected = {
-            "SB": "Burda-sergey",
-            "BB": "mweems1",
-            "UTG": "11Hammer1199",
-            "MP": "AAlex777718",
-            "CO": "kookie4061",
-            "BTN": "sampik87"
-        }
-        self.failUnlessEqual(locations["SB"], expected["SB"])
-        self.failUnlessEqual(locations["MP"], expected["MP"])
-        self.failUnlessEqual(locations["BTN"], expected["BTN"])
-        self.failIfEqual(locations["UTG"], expected["CO"])
-        self.failIfEqual(locations["BB"], expected["SB"])
+        button = setButton(self.text)
+        self.failUnlessEqual(button, {"Button": 2})
 
 
 class TestParsingCards(unittest.TestCase):

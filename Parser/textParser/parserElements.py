@@ -19,3 +19,4 @@ player = seat + Literal(":") + Group(Combine(OneOrMore(Word(alphanums)) +
                  Optional(OneOrMore(Word(alphanums)))).\
     setResultsName("playerName") + stack
 
+button = Literal('#').suppress() + Word(nums)

@@ -2,7 +2,6 @@ import helperMethods as helper
 import parserElements as parse
 
 
-
 def firstLineParser(text):
     hand = {}
     found_id = parse.id.searchString(text)[0][0]
@@ -22,27 +21,17 @@ def parsePlayers(text):
     stack = parse.stack.searchString(text)[0][0]
 
 
-    players = {
+    playerInfo = {
         "Seat": int(seatInfo[0][1]),
         "name": " ".join(player.playerName),
         "stack": float(stack)
     }
-    return players
+    return playerInfo
 
 
-def setLocations(text, players):
-    splitText = text.split()
-    button_index = helper._getUnique_number(splitText[-1])
-    button = players[button_index]['name']
-    locations = {
-        "BTN": button,
-        "SB": players[helper._checkIndex(button_index + 1)]['name'],
-        "BB": players[helper._checkIndex(button_index + 2)]['name'],
-        "UTG": players[helper._checkIndex(button_index + 3)]['name'],
-        "MP": players[helper._checkIndex(button_index + 4)]['name'],
-        "CO": players[helper._checkIndex(button_index + 5)]['name'],
-    }
-    return locations
+def setButton(text):
+    seat = parse.button.searchString(text)[0][0]
+    return {"Button": int(seat)}
 
 
 def getHandValue(text):
