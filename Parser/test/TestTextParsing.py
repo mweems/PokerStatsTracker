@@ -29,28 +29,35 @@ class TestParsingFirstLine(unittest.TestCase):
 
 
 class TestParsingPreflop(unittest.TestCase):
-    players = "Seat 1: kookie4061 ($8.51) " \
-              "Seat 2: sampik87 ($1.62) " \
-              "Seat 3: Burda-sergey ($2.41) " \
-              "Seat 4: mweems1 ($2) " \
-              "Seat 5: 11 Hammer 1199 ($1.38) " \
-              "Seat 6: AAlex777718 ($1.79)"
+    player1 = "Seat 1: kookie4061 ($8.51)"
+    player2 = "Seat 2: sampik87 ($1.62)"
+    player3 = "Seat 3: Burda-sergey ($2.41)"
+    player4 = "Seat 4: mweems1 ($2)"
+    player5 = "Seat 5: 11 Hammer 1199 ($1.38)"
+    player6 = "Seat 6: AAlex777718 ($1.79)"
 
-    def testPlayersMatchMoney(self):
-        players = parsePlayers(self.players)
-        expected = {
-            1: {"name": "kookie4061", "stack": 8.51},
-            2: {"name": "sampik87", "stack": 1.62},
-            3: {"name": "Burda-sergey", "stack": 1.62},
-            4: {"name": "mweems1", "stack": 2},
-            5: {"name": "11Hammer1199", "stack": 1.38},
-            6: {"name": "AAlex777718", "stack": 1.79}
+    def testPlayerMatchesMoneyAndSeat(self):
+        player1 = parsePlayers(self.player1)
+        expected1 = {
+            "Seat": 1,
+            "name": "kookie4061",
+            "stack": 8.51
         }
-        self.failUnlessEqual(players[1], expected[1])
-        self.failUnlessEqual(players[4], expected[4])
-        self.failUnlessEqual(players[5], expected[5])
-        self.failIfEqual(players[1], expected[4])
-        self.failIfEqual(players[2], expected[3])
+        player2 = parsePlayers(self.player3)
+        expected2 = {
+            "Seat": 3,
+            "name": "Burda-sergey",
+            "stack": 2.41
+        }
+        player3 = parsePlayers(self.player5)
+        expected3 = {
+            "Seat": 5,
+            "name": "11 Hammer 1199",
+            "stack": 1.38
+        }
+        self.failUnlessEqual(player1, expected1)
+        self.failUnlessEqual(player2, expected2)
+        self.failUnlessEqual(player3, expected3)
 
 
 class TestParsingLocations(unittest.TestCase):
@@ -141,6 +148,7 @@ class TestPreFlopAction(unittest.TestCase):
         raisePre = {"kookie4061": .10}
         self.failUnlessEqual(pre, raisePre)
 
+
 class TestParsingFlop(unittest.TestCase):
     text = "*** FLOP *** [Kh Js 9s] (Total Pot: $0.08, 4 Players)"
 
@@ -158,6 +166,7 @@ class TestParsingFlop(unittest.TestCase):
         numPlayer = getPlayers(self.text, "flop")
         expected = 4
         self.failUnlessEqual(numPlayer, expected)
+
 
 class TestParsingTurn(unittest.TestCase):
     text = "*** TURN *** [Kh Js 9s] [Ks] (Total Pot: $0.08, 4 Players)"

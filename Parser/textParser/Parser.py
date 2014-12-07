@@ -17,13 +17,16 @@ def firstLineParser(text):
 
 
 def parsePlayers(text):
-    players = {}
-    splitText = text.split("Seat")
-    splitText.pop(0)
-    for line in splitText:
-        newLine = line.replace(" ", "")
-        player = helper._convertPlayerInfo(newLine)
-        players.update(player)
+    seatInfo = parse.seat.searchString(text)
+    player = parse.player.parseString(text)
+    stack = parse.stack.searchString(text)[0][0]
+
+
+    players = {
+        "Seat": int(seatInfo[0][1]),
+        "name": " ".join(player.playerName),
+        "stack": float(stack)
+    }
     return players
 
 
