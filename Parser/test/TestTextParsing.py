@@ -159,21 +159,21 @@ class TestParsingRiver(unittest.TestCase):
         self.failUnlessEqual(potSize, expected)
 
 
-class TestParsingWinner(unittest.TestCase):
-    text = "sampik87 shows [Jc 8d] a full house, Kings full of Jacks " \
-           "kookie4061 mucks " \
-           "sampik87 wins the pot ($0.31) " \
-           "with a full house, Kings full of Jacks"
+class TestParsingWinningPlayerAndHand(unittest.TestCase):
+    text = "sampik87 shows [Jc 8d] a full house, Kings full of Jacks"
 
     def testGetsWinningPlayer(self):
         player = getWinningPlayer(self.text)
         expected = {
-            "sampik87": {
+            "player": "sampik87",
                 "hand": ["Jc", "8d"],
-                "pot": .31
-            }
+                "handText": "a full house , Kings full of Jacks"
         }
         self.failUnlessEqual(player, expected)
+
+
+class TestParsingWinningPotAmount(unittest.TestCase):
+    text = "sampik87 wins the pot ($0.31)"
 
 
 if __name__ == '__main__':

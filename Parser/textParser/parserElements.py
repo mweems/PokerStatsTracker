@@ -28,7 +28,7 @@ set = Optional(Literal("A")) + Optional(Literal("K")) + \
 
 card = Combine(Optional(set) + Optional(num) + lett)
 
-hand = Literal("[").suppress() + card + card + Literal("]")
+hand = Literal("[").suppress() + card + card + Literal("]").suppress()
 
 
 fold = Literal('folds')
@@ -54,4 +54,8 @@ flop = Literal("[").suppress() + Group(card + card + card) + \
 
 pot = dollar + decimalNum
 
-turn = Literal("[").suppress() + card + Literal("]")
+turn = Literal("[").suppress() + card + Literal("]").suppress()
+
+winningPlayer = player + hand.setResultsName("hand") + \
+                Group(OneOrMore(lett) + Literal(",") +
+                      (OneOrMore(lett))).setResultsName("handText")

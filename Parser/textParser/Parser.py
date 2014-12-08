@@ -77,12 +77,10 @@ def getNextCard(text, cards):
 
 
 def getWinningPlayer(text):
-    player = helper._winningPlayer(text)
-    hand = helper._winningHand(text)
-    pot = helper._winningPot(text)
+    winner = parse.winningPlayer.parseString(text)
+    winner.playerName.pop(-1)
     return {
-        player: {
-            "hand": hand,
-            "pot": pot
-        }
+            "player": " ".join(winner.playerName),
+            "hand": [winner.hand[0], winner.hand[1]],
+            "handText": " ".join(winner.handText)
     }
