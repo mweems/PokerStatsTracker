@@ -35,13 +35,12 @@ def setButton(text):
 
 
 def getHandValue(text):
-    splitText = text.split("[")
-    hands = splitText[1].split()
-    hand = {
+    hands = parse.hand.searchString(text)[0]
+    holeCards = {
         "Card1": hands[0],
-        "Card2": hands[1].strip(']')
+        "Card2": hands[1]
     }
-    return hand
+    return holeCards
 
 
 def checkFold(text):

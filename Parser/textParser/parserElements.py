@@ -4,6 +4,7 @@ from pyparsing import Word, Literal, nums, alphas, alphanums, OneOrMore, \
 id = Literal("#").suppress() + OneOrMore(Word(nums))
 
 num = Word(nums)
+lett = Word(alphas)
 date = Combine(num + "/" + num + "/" + num)
 
 decimalNum = Combine(Word(nums, nums + ",") +
@@ -20,3 +21,6 @@ player = seat + Literal(":") + Group(Combine(OneOrMore(Word(alphanums)) +
     setResultsName("playerName") + stack
 
 button = Literal('#').suppress() + Word(nums)
+
+hand = Literal("[").suppress() + Combine(num +lett) + Combine(num + lett) + \
+        Literal("]")
