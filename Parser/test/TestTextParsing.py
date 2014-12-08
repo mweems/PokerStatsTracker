@@ -3,7 +3,7 @@ import datetime
 
 from Parser.textParser.Parser import firstLineParser, parsePlayers, \
     setButton, getHandValue, checkAction, getFlop, getPotSize, getNextCard,\
-    getWinningPlayer
+    getWinningPlayer, getWinningPot
 
 
 class TestParsingFirstLine(unittest.TestCase):
@@ -175,6 +175,12 @@ class TestParsingWinningPlayerAndHand(unittest.TestCase):
 class TestParsingWinningPotAmount(unittest.TestCase):
     text = "sampik87 wins the pot ($0.31)"
 
+    def testGetWinningPot(self):
+        pot = getWinningPot(self.text)
+        expected = {
+            "pot": .31
+        }
+        self.failUnlessEqual(pot, expected)
 
 if __name__ == '__main__':
     unittest.main()

@@ -84,3 +84,9 @@ def getWinningPlayer(text):
             "hand": [winner.hand[0], winner.hand[1]],
             "handText": " ".join(winner.handText)
     }
+
+def getWinningPot(text):
+    pot = parse.winningPot.searchString(text)
+    return {
+        "pot": float(pot[0][0])
+    }

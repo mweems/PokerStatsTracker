@@ -59,3 +59,6 @@ turn = Literal("[").suppress() + card + Literal("]").suppress()
 winningPlayer = player + hand.setResultsName("hand") + \
                 Group(OneOrMore(lett) + Literal(",") +
                       (OneOrMore(lett))).setResultsName("handText")
+
+winningPot = Literal("(").suppress() + dollar + decimalNum + \
+             Literal(")").suppress()
