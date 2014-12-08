@@ -17,7 +17,7 @@ def firstLineParser(text):
 
 def parsePlayers(text):
     seatInfo = parse.seat.searchString(text)
-    player = parse.player.parseString(text)
+    player = parse.playerLocation.parseString(text)
     stack = parse.stack.searchString(text)[0][0]
 
 
@@ -43,67 +43,26 @@ def getHandValue(text):
     return holeCards
 
 
-def checkFold(text):
-    splittext = text.split()
-    folded = []
-    for word in splittext:
-        nextIndex = splittext.index(word) + 1
-        size = len(splittext)
-        if nextIndex <= size - 1:
-            if splittext[nextIndex] == "folds":
-                folded.append(word)
-    noDupes = []
-    [noDupes.append(i) for i in folded if not noDupes.count(i)]
-
-    return noDupes
-
-
-def checkCall(text, stakes):
-    splittext = text.split()
-    called = {}
-    for word in splittext:
-        nextIndex = splittext.index(word) + 1
-        money = splittext.index(word) + 2
-        size = len(splittext)
-        if money <= size - 1:
-            if splittext[nextIndex] == "calls":
-                called[word] = helper._toValue(splittext[money])
-            if splittext[nextIndex] == "checks":
-                called[word] = stakes['bigBlind']
-
-    return called
-
-
-def checkBet(text):
-    splittext = text.split()
-    bet = {}
-    for word in splittext:
-        previouIndex = splittext.index(word) - 1
-        nextIndex = splittext.index(word) + 1
-        if word == "bets":
-            bet[splittext[previouIndex]] = helper._toValue(splittext[nextIndex])
-    return bet
-
-
-def checkRaise(text):
-    splittext = text.split()
-    raises = {}
-    for word in splittext:
-        previouIndex = splittext.index(word) - 1
-        nextIndex = splittext.index(word) + 2
-        if word == "raises":
-            raises[splittext[previouIndex]] = helper._toValue(splittext[nextIndex])
-    return raises
+def checkAction(text):
+    player = parse.player.searchString(text)[0][0]
+    action = player.pop(-1)
+    if action == "to":
+        action = player.pop(-1)
+    amount = parse.betAmount.searchString(text)
+    if amount:
+        return {
+            " ".join(player): action,
+            "amount": float(amount[0][0])
+        }
+    return {
+        " ".join(player): action
+    }
 
 
 def getFlop(text):
-    splittext = text.split()
-    flop = [
-        helper._cardValue(splittext[3]),
-        splittext[4],
-        helper._cardValue(splittext[5])
-    ]
-    return flop
+    flop = parse.flop.searchString(text)[0][0]
+
+    return [flop[0], flop[1], flop[2]]
 
 
 def getPotSize(text, round):

@@ -2,8 +2,8 @@ import unittest
 import datetime
 
 from Parser.textParser.Parser import firstLineParser, parsePlayers, \
-    setButton, getHandValue, checkFold, checkCall, checkBet, checkRaise, \
-    getFlop, getPotSize, getPlayers, getTurn, getRiver, getWinningPlayer
+    setButton, getHandValue, checkAction, getFlop, getPotSize, getPlayers, \
+    getTurn, getRiver, getWinningPlayer
 
 
 class TestParsingFirstLine(unittest.TestCase):
@@ -77,53 +77,42 @@ class TestParsingCards(unittest.TestCase):
 
 
 class TestPreFlopAction(unittest.TestCase):
-    text = "11 Hammer 1199 folds " \
-           "AAlex777718 folds " \
-           "kookie4061 calls $0.02 " \
-           "sampik87 calls $0.02 " \
-           "Burda-sergey calls $0.01 " \
-           "mweems1 checks"
+    foldText = "11 Hammer 1199 folds"
+    checkText = "mweems1 checks"
+    betText = "11 Hammer 1199 bets $0.02"
+    raiseText = "kookie4061 raises to $0.10"
+    callText = "sampik87 calls $0.10"
 
-    otherText = "11 Hammer 1199 bets $0.02 " \
-                "AAlex777718 folds " \
-                "kookie4061 raises to $0.10 " \
-                "sampik87 calls $0.10 " \
-                "Burda-sergey folds " \
-                "mweems1 folds " \
-                "11 Hammer 1199 folds"
 
-    stakes = {
-        "smallBlind": .01,
-        "bigBlind": .02
-    }
-
-    def testCheckIfFolded(self):
-        pre = checkFold(self.text)
-        foldedPre = [
-            "1199",
-            "AAlex777718"
-        ]
-        self.failUnlessEqual(pre, foldedPre)
-
-    def testCheckIfCalled(self):
-        pre = checkCall(self.text, self.stakes)
-        callPre = {
-            "kookie4061": .02,
-            "sampik87": .02,
-            "Burda-sergey": .02,
-            "mweems1": .02}
-
-        self.failUnlessEqual(pre['kookie4061'], callPre['kookie4061'])
-
-    def testCheckIfBet(self):
-        pre = checkBet(self.otherText)
-        betPre = {"1199": .02}
-        self.failUnlessEqual(pre, betPre)
-
-    def testCheckIfRaises(self):
-        pre = checkRaise(self.otherText)
-        raisePre = {"kookie4061": .10}
-        self.failUnlessEqual(pre, raisePre)
+    def testPreflopAction(self):
+        fold = checkAction(self.foldText)
+        expectedFold = {
+            "11 Hammer 1199": "folds"
+        }
+        check = checkAction(self.checkText)
+        expectedCheck = {
+            "mweems1": "checks"
+        }
+        call = checkAction(self.callText)
+        expectedCall = {
+            "sampik87": "calls",
+            "amount": .10
+        }
+        raises = checkAction(self.raiseText)
+        expectedRaise = {
+            "kookie4061": "raises",
+            "amount": .10
+        }
+        bet = checkAction(self.betText)
+        expectedBet = {
+            "11 Hammer 1199": "bets",
+            "amount": .02
+        }
+        self.failUnlessEqual(fold, expectedFold)
+        self.failUnlessEqual(check, expectedCheck)
+        self.failUnlessEqual(call, expectedCall)
+        self.failUnlessEqual(raises, expectedRaise)
+        self.failUnlessEqual(bet, expectedBet)
 
 
 class TestParsingFlop(unittest.TestCase):

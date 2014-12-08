@@ -11,16 +11,43 @@ decimalNum = Combine(Word(nums, nums + ",") +
                      Optional("." + OneOrMore(Word(nums))))
 dollar = Literal("$").suppress()
 stakes = dollar + decimalNum + Literal("/").suppress() + \
-         dollar + decimalNum
+            dollar + decimalNum
 
 seat = Literal("Seat") + num
 stack = Literal("(").suppress() + dollar + decimalNum + Literal(")").suppress()
-player = seat + Literal(":") + Group(Combine(OneOrMore(Word(alphanums)) +
-                 Optional("-" + OneOrMore(Word(alphanums)))) + \
-                 Optional(OneOrMore(Word(alphanums)))).\
-    setResultsName("playerName") + stack
+playerLocation = seat + Literal(":") + \
+                 Group(Combine(OneOrMore(Word(alphanums)) +
+                 Optional("-" + OneOrMore(Word(alphanums)))) +
+                    Optional(OneOrMore(Word(alphanums)))).\
+                        setResultsName("playerName") + stack
 
-button = Literal('#').suppress() + Word(nums)
+button = Literal('#').suppress() + num
 
-hand = Literal("[").suppress() + Combine(num +lett) + Combine(num + lett) + \
-        Literal("]")
+set = Optional(Literal("A")) + Optional(Literal("K")) + \
+      Optional(Literal("Q")) + Optional(Literal("J"))
+
+card = Combine(Optional(set) + Optional(num) + lett)
+
+hand = Literal("[").suppress() + card + card + Literal("]")
+
+
+fold = Literal('folds')
+call = Literal('calls')
+bet = Literal('bets')
+raises = Literal('raises')
+check = Literal('checks')
+
+literalAction = Optional(check) + Optional(bet) + Optional(fold) + \
+                Optional(call) + Optional(raises)
+
+action = literalAction
+
+betAmount = dollar + decimalNum
+
+player = Group(Combine(OneOrMore(Word(alphanums)) +
+                       Optional("-" + OneOrMore(Word(alphanums)))) +
+               Optional(OneOrMore(Word(alphanums)))).setResultsName(
+    "playerName")
+
+flop = Literal("[").suppress() + Group(card + card + card) + \
+       Literal("]").suppress()
