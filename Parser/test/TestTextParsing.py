@@ -2,8 +2,8 @@ import unittest
 import datetime
 
 from Parser.textParser.Parser import firstLineParser, parsePlayers, \
-    setButton, getHandValue, checkAction, getFlop, getPotSize, getPlayers, \
-    getTurn, getRiver, getWinningPlayer
+    setButton, getHandValue, checkAction, getFlop, getPotSize, getNextCard,\
+    getWinningPlayer
 
 
 class TestParsingFirstLine(unittest.TestCase):
@@ -124,14 +124,9 @@ class TestParsingFlop(unittest.TestCase):
         self.failUnlessEqual(flop, expectedFlop)
 
     def testParsesPotSizeOnFlop(self):
-        potSize = getPotSize(self.text, "flop")
-        expected = .08
+        potSize = getPotSize(self.text)
+        expected = {"potSize": .08}
         self.failUnlessEqual(potSize, expected)
-
-    def testNumPlayersOnFlop(self):
-        numPlayer = getPlayers(self.text, "flop")
-        expected = 4
-        self.failUnlessEqual(numPlayer, expected)
 
 
 class TestParsingTurn(unittest.TestCase):
@@ -139,19 +134,14 @@ class TestParsingTurn(unittest.TestCase):
 
     def testAddsTurnCardToBoard(self):
         cards = ["Kh", "Js", "9s"]
-        board = getTurn(self.text, cards)
+        board = getNextCard(self.text, cards)
         expected = ["Kh", "Js", "9s", "Ks"]
         self.failUnlessEqual(board, expected)
 
     def testParsesPotSizeOnTurn(self):
-        potSize = getPotSize(self.text, "turn")
-        expected = .08
+        potSize = getPotSize(self.text)
+        expected = {"potSize": .08}
         self.failUnlessEqual(potSize, expected)
-
-    def testNumPlayersOnTurn(self):
-        numPlayer = getPlayers(self.text, "turn")
-        expected = 4
-        self.failUnlessEqual(numPlayer, expected)
 
 
 class TestParsingRiver(unittest.TestCase):
@@ -159,19 +149,14 @@ class TestParsingRiver(unittest.TestCase):
 
     def testAddsRiverCardToBoard(self):
         cards = ["Kh", "Js", "9s", "Ks"]
-        board = getRiver(self.text, cards)
+        board = getNextCard(self.text, cards)
         expected = ["Kh", "Js", "9s", "Ks", "Kc"]
         self.failUnlessEqual(board, expected)
 
     def testParsesPotSizeOnRiver(self):
-        potSize = getPotSize(self.text, "river")
-        expected = .12
+        potSize = getPotSize(self.text)
+        expected = {"potSize": .12}
         self.failUnlessEqual(potSize, expected)
-
-    def testNumPlayersOnriver(self):
-        numPlayer = getPlayers(self.text, "river")
-        expected = 2
-        self.failUnlessEqual(numPlayer, expected)
 
 
 class TestParsingWinner(unittest.TestCase):

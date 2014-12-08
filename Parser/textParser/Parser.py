@@ -61,40 +61,19 @@ def checkAction(text):
 
 def getFlop(text):
     flop = parse.flop.searchString(text)[0][0]
-
     return [flop[0], flop[1], flop[2]]
 
 
-def getPotSize(text, round):
-    splittext = text.split()
-    if round == 'flop':
-        return helper._toValue(splittext[8])
-    if round == 'turn':
-        return helper._toValue(splittext[9])
-    if round == 'river':
-        return helper._toValue(splittext[10])
+def getPotSize(text):
+    pot = parse.pot.searchString(text)[0][0]
+    return {"potSize": float(pot)}
 
 
-def getPlayers(text, round):
-    splittext = text.split()
-    if round == 'flop':
-        return helper._getUnique_number(splittext[9])
-    if round == 'turn':
-        return helper._getUnique_number(splittext[10])
-    if round == 'river':
-        return helper._getUnique_number(splittext[11])
-
-
-def getTurn(text, cards):
-    splittext = text.split()
-    cards.append(helper._cardValue(splittext[6]))
-    return cards
-
-
-def getRiver(text, cards):
-    splittext = text.split()
-    cards.append(helper._cardValue(splittext[7]))
-    return cards
+def getNextCard(text, cards):
+    turn = parse.turn.searchString(text)[0][0]
+    cards.append(turn)
+    board = cards
+    return board
 
 
 def getWinningPlayer(text):

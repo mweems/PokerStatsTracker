@@ -51,3 +51,7 @@ player = Group(Combine(OneOrMore(Word(alphanums)) +
 
 flop = Literal("[").suppress() + Group(card + card + card) + \
        Literal("]").suppress()
+
+pot = dollar + decimalNum
+
+turn = Literal("[").suppress() + card + Literal("]")
