@@ -1,5 +1,5 @@
 import unittest
-from Parser.handParser.Parser import handStartAmount, handEndAmount
+from Parser.handParser.parseHand import handStartAmount, handEndAmount
 
 
 class TestHandParser(unittest.TestCase):

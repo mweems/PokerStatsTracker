@@ -1,7 +1,7 @@
 import unittest
 import datetime
 
-from Parser.textParser.quickLookParser import firstLineParser, parsePlayers, \
+from parseHand.textParser.quickLookParser import firstLineParser, parsePlayers, \
     setButton, getHandValue, checkAction, getFlop, getPotSize, getNextCard,\
     getWinningPlayer, getWinningPot, getMuckedCards
 

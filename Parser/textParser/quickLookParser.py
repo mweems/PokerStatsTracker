@@ -1,5 +1,5 @@
-from Parser.helper import helperMethods as helper
-from Parser.helper import parserElements as parse
+from parseHand.helper import helperMethods as helper
+from parseHand.helper import parserElements as parse
 
 
 def firstLineParser(text):
