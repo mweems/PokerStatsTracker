@@ -1,5 +1,5 @@
-import helperMethods as helper
-import parserElements as parse
+from Parser.helper import helperMethods as helper
+from Parser.helper import parserElements as parse
 
 
 def firstLineParser(text):
@@ -41,6 +41,16 @@ def getHandValue(text):
         "Card2": hands[1]
     }
     return holeCards
+
+def getMuckedCards(text):
+    cards = getHandValue(text)
+    playerText = parse.player.searchString(text)
+    player = playerText[1][0]
+    player.pop(-1)
+    return {
+        "player": " ".join(player),
+        "hand": [cards['Card1'], cards['Card2']]
+    }
 
 
 def checkAction(text):

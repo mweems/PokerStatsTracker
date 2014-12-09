@@ -1,15 +1,29 @@
+from Parser.helper import
 from pyparsing import Word, Literal, nums, alphas, alphanums, OneOrMore, \
     Combine, Optional, Group
-
-id = Literal("#").suppress() + OneOrMore(Word(nums))
 
 num = Word(nums)
 lett = Word(alphas)
 date = Combine(num + "/" + num + "/" + num)
+dollar = Literal("$").suppress()
+player = Group(Combine(OneOrMore(Word(alphanums)) +
+                       Optional("-" + OneOrMore(Word(alphanums)))) +
+               Optional(OneOrMore(Word(alphanums)))).setResultsName(
+    "playerName")
 
 decimalNum = Combine(Word(nums, nums + ",") +
                      Optional("." + OneOrMore(Word(nums))))
-dollar = Literal("$").suppress()
+
+
+startAmount = Literal("Seat") + num + Literal(":") + player + Literal("(")\
+    + dollar + decimalNum + Literal(")")
+
+
+
+
+id = Literal("#").suppress() + OneOrMore(Word(nums))
+
+
 stakes = dollar + decimalNum + Literal("/").suppress() + \
             dollar + decimalNum
 
@@ -43,11 +57,6 @@ literalAction = Optional(check) + Optional(bet) + Optional(fold) + \
 action = literalAction
 
 betAmount = dollar + decimalNum
-
-player = Group(Combine(OneOrMore(Word(alphanums)) +
-                       Optional("-" + OneOrMore(Word(alphanums)))) +
-               Optional(OneOrMore(Word(alphanums)))).setResultsName(
-    "playerName")
 
 flop = Literal("[").suppress() + Group(card + card + card) + \
        Literal("]").suppress()

@@ -1,9 +1,9 @@
 import unittest
 import datetime
 
-from Parser.textParser.Parser import firstLineParser, parsePlayers, \
+from Parser.textParser.quickLookParser import firstLineParser, parsePlayers, \
     setButton, getHandValue, checkAction, getFlop, getPotSize, getNextCard,\
-    getWinningPlayer, getWinningPot
+    getWinningPlayer, getWinningPot, getMuckedCards
 
 
 class TestParsingFirstLine(unittest.TestCase):
@@ -166,8 +166,8 @@ class TestParsingWinningPlayerAndHand(unittest.TestCase):
         player = getWinningPlayer(self.text)
         expected = {
             "player": "sampik87",
-                "hand": ["Jc", "8d"],
-                "handText": "a full house , Kings full of Jacks"
+            "hand": ["Jc", "8d"],
+            "handText": "a full house , Kings full of Jacks"
         }
         self.failUnlessEqual(player, expected)
 
@@ -181,6 +181,17 @@ class TestParsingWinningPotAmount(unittest.TestCase):
             "pot": .31
         }
         self.failUnlessEqual(pot, expected)
+
+class TestSummaryInfo(unittest.TestCase):
+    text = "Seat 1: kookie4061 mucked [9d Ac] - a full house, Kings full of Nines",
+
+    def testGetMuckedCards(self):
+        cards = getMuckedCards(self.text)
+        expected = {
+            "player": "kookie4061",
+            "hand": ["9d", "Ac"]
+        }
+        self.failUnlessEqual(cards, expected)
 
 if __name__ == '__main__':
     unittest.main()

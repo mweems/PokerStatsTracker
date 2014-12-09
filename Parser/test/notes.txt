@@ -3,6 +3,117 @@ from pyparsing import Literal, Word, Group, OneOrMore, \
   White, Combine, Or, Optional, LineEnd, \
   GoToColumn, Forward, Keyword, oneOf, ZeroOrMore
 
-
   use this line at the top of iterm python session
 
+  look at linear regression
+
+
+  what information do I want to access?
+  - win/loss per hand
+  - win/loss per session
+  - win/loss by stakes
+  - win/loss
+  - win/loss when raise preflop
+  - win/loss when call preflop
+  - win/loss when fold on flop
+  - win/loss when fold on turn
+  - win/loss when fold on river
+  - win/loss against player
+  - win/loss when all in
+
+  - percent of hands played session
+  - percent of hands played total
+  - percent of hands played by stakes
+  - percent of hands [raised, bet, called] pre
+  - percent of hands [raised, bet, called] flop
+  - percent of hands [raised, bet, called] turn
+  - percent of hands [raised, bet, called] river
+  - percent of hands to showdown
+
+  - show hands raised with position and board
+  - show hands called with position and board
+  - show hands all in with position and board
+
+    quick look at hand
+
+
+
+
+hand {
+    id: hand ID,
+    date: date of session,
+    stakes: {
+        smallBlind: small blind,
+        bigBlind: big blind
+    }
+}
+players [
+     {
+        "seat": seat number,
+        "name": player name,
+        "stack": player stack
+     },
+     {
+        "seat": seat number,
+        "name": player name,
+        "stack": player stack
+     }
+]
+{"button": button location}
+{"card1": first card, "card2": second card}
+preFlop [
+    {
+        player name: action,
+    },
+    {
+        player name: action,
+        "amount": bet/call/raise amount
+    }
+]
+flop [ card, card, card ]
+{"potSize": amount in pot}
+flop [
+    {
+        player name: action,
+    },
+    {
+        player name: action,
+        "amount": bet/call/raise amount
+    }
+]
+turn [ card, card, card, card ]
+{"potSize": amount in pot}
+turn [
+    {
+        player name: action,
+    },
+    {
+        player name: action,
+        "amount": bet/call/raise amount
+    }
+]
+river [ card, card, card, card, card ]
+{"potSize": amount in pot}
+river [
+    {
+        player name: action,
+    },
+    {
+        player name: action,
+        "amount": bet/call/raise amount
+    }
+]
+winner {
+    "player": player name,
+    "hand": winning hand,
+    "text": hand description
+}
+finalPotSize {
+    "pot": pot amount
+}
+losingHands [
+    {
+        "player": player name,
+        "hand": [card1, card2]
+    }
+]
