@@ -1,4 +1,3 @@
-from Parser.helper import
 from pyparsing import Word, Literal, nums, alphas, alphanums, OneOrMore, \
     Combine, Optional, Group
 
@@ -15,8 +14,11 @@ decimalNum = Combine(Word(nums, nums + ",") +
                      Optional("." + OneOrMore(Word(nums))))
 
 
-startAmount = Literal("Seat") + num + Literal(":") + player + Literal("(")\
-    + dollar + decimalNum + Literal(")")
+seat = Group(Literal("Seat") + Word(nums) + Literal(":").suppress())
+me = Literal("mweems1")
+stack = Literal("(").suppress() + Literal("$").suppress() \
+    + decimalNum + Literal(")").suppress()
+startAmount = seat + me + stack
 
 
 
