@@ -53,6 +53,9 @@ def getMuckedCards(text):
 
 
 def checkAction(text):
+    delimeter = parse.delimeterText.searchString(text)
+    if delimeter:
+        return delimeter
     player = parse.player.searchString(text)[0][0]
     action = player.pop(-1)
     if action == "to":
@@ -105,3 +108,7 @@ def getWinningPot(text):
     return {
         "pot": float(pot[0][0])
     }
+
+def delimeterText(text):
+    text = parse.delimeterText.searchString(text)[0]
+    return text[0]

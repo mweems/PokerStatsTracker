@@ -3,7 +3,7 @@ import datetime
 
 from Parser.textParser.quickLookParser import firstLineParser, parsePlayers, \
     getButton, getHandValue, checkAction, getFlop, getPotSize, getNextCard,\
-    getWinningPlayer, getWinningPot, getMuckedCards
+    getWinningPlayer, getWinningPot, getMuckedCards, delimeterText
 
 
 class TestParsingFirstLine(unittest.TestCase):
@@ -62,6 +62,20 @@ class TestParsingCards(unittest.TestCase):
     def testCardsGetCreatedProperly(self):
         hand = getHandValue(self.text)
         self.failUnlessEqual(hand, ["4c", "8h"])
+
+class TestStreetDelimeters(unittest.TestCase):
+    flopText = "*** FLOP *** [Kh Js 9s] (Total Pot: $0.08, 4 Players)"
+    turnText = "*** TURN *** [Kh Js 9s] [Ks] (Total Pot: $0.08, 4 Players)"
+    riverText = "*** RIVER *** [Kh Js 9s Ks] [Kc] " \
+                "(Total Pot: $0.12, 2 Players)"
+
+    def testDelimeters(self):
+        flop = delimeterText(self.flopText)
+        turn = delimeterText(self.turnText)
+        river = delimeterText(self.riverText)
+        self.failUnlessEqual(flop, "***")
+        self.failUnlessEqual(turn, "***")
+        self.failUnlessEqual(river, "***")
 
 
 class TestPreFlopAction(unittest.TestCase):
