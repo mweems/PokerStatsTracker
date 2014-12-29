@@ -1,6 +1,12 @@
-from parseHand.helper import helperMethods as helper
-from parseHand.helper import parserElements as parse
+from Parser.helper import helperMethods as helper
+from Parser.helper import parserElements as parse
 
+Actions = ["checks", "calls", "raises", "bets", "folds"]
+
+def _notLegal(action):
+    if Actions.__contains__(action):
+        return False
+    return True
 
 def firstLineParser(text):
     hand = {}
@@ -16,31 +22,24 @@ def firstLineParser(text):
 
 
 def parsePlayers(text):
-    seatInfo = parse.seat.searchString(text)
-    player = parse.playerLocation.parseString(text)
+    player = parse.playerLocation.searchString(text)
     stack = parse.stack.searchString(text)[0][0]
-
-
     playerInfo = {
-        "Seat": int(seatInfo[0][1]),
-        "name": " ".join(player.playerName),
-        "stack": float(stack)
+        " ".join(player[0][3]): float(stack)
     }
     return playerInfo
 
 
-def setButton(text):
+def getButton(text):
     seat = parse.button.searchString(text)[0][0]
     return {"Button": int(seat)}
 
 
 def getHandValue(text):
     hands = parse.hand.searchString(text)[0]
-    holeCards = {
-        "Card1": hands[0],
-        "Card2": hands[1]
-    }
+    holeCards = [hands[0], hands[1]]
     return holeCards
+
 
 def getMuckedCards(text):
     cards = getHandValue(text)
@@ -49,7 +48,7 @@ def getMuckedCards(text):
     player.pop(-1)
     return {
         "player": " ".join(player),
-        "hand": [cards['Card1'], cards['Card2']]
+        "hand": [cards[0], cards[1]]
     }
 
 
@@ -58,14 +57,18 @@ def checkAction(text):
     action = player.pop(-1)
     if action == "to":
         action = player.pop(-1)
+    if _notLegal(action):
+        return {}
     amount = parse.betAmount.searchString(text)
     if amount:
         return {
-            " ".join(player): action,
+            "player": " ".join(player),
+            "action": action,
             "amount": float(amount[0][0])
         }
     return {
-        " ".join(player): action
+        "player": " ".join(player),
+        "action": action
     }
 
 
@@ -87,13 +90,15 @@ def getNextCard(text, cards):
 
 
 def getWinningPlayer(text):
-    winner = parse.winningPlayer.parseString(text)
-    winner.playerName.pop(-1)
+    winner = parse.winningPlayer.searchString(text)
+    winner[0][0].pop()
+    player = winner[0][0]
     return {
-            "player": " ".join(winner.playerName),
-            "hand": [winner.hand[0], winner.hand[1]],
-            "handText": " ".join(winner.handText)
+        "player": " ".join(player),
+        "hand": [winner[0][1], winner[0][2]],
+        "handText": " ".join(winner[0][3])
     }
+
 
 def getWinningPot(text):
     pot = parse.winningPot.searchString(text)

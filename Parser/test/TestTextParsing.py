@@ -1,8 +1,8 @@
 import unittest
 import datetime
 
-from parseHand.textParser.quickLookParser import firstLineParser, parsePlayers, \
-    setButton, getHandValue, checkAction, getFlop, getPotSize, getNextCard,\
+from Parser.textParser.quickLookParser import firstLineParser, parsePlayers, \
+    getButton, getHandValue, checkAction, getFlop, getPotSize, getNextCard,\
     getWinningPlayer, getWinningPot, getMuckedCards
 
 
@@ -38,23 +38,11 @@ class TestParsingPreflop(unittest.TestCase):
 
     def testPlayerMatchesMoneyAndSeat(self):
         player1 = parsePlayers(self.player1)
-        expected1 = {
-            "Seat": 1,
-            "name": "kookie4061",
-            "stack": 8.51
-        }
+        expected1 = {"kookie4061": 8.51}
         player2 = parsePlayers(self.player3)
-        expected2 = {
-            "Seat": 3,
-            "name": "Burda-sergey",
-            "stack": 2.41
-        }
+        expected2 = {"Burda-sergey": 2.41}
         player3 = parsePlayers(self.player5)
-        expected3 = {
-            "Seat": 5,
-            "name": "11 Hammer 1199",
-            "stack": 1.38
-        }
+        expected3 = {"11 Hammer 1199": 1.38}
         self.failUnlessEqual(player1, expected1)
         self.failUnlessEqual(player2, expected2)
         self.failUnlessEqual(player3, expected3)
@@ -64,7 +52,7 @@ class TestButtonLocation(unittest.TestCase):
     text = "The button is in seat #2"
 
     def testPlayerSeatsAccurate(self):
-        button = setButton(self.text)
+        button = getButton(self.text)
         self.failUnlessEqual(button, {"Button": 2})
 
 
@@ -73,7 +61,7 @@ class TestParsingCards(unittest.TestCase):
 
     def testCardsGetCreatedProperly(self):
         hand = getHandValue(self.text)
-        self.failUnlessEqual(hand, {"Card1": "4c", "Card2": "8h"})
+        self.failUnlessEqual(hand, ["4c", "8h"])
 
 
 class TestPreFlopAction(unittest.TestCase):
@@ -87,32 +75,41 @@ class TestPreFlopAction(unittest.TestCase):
     def testPreflopAction(self):
         fold = checkAction(self.foldText)
         expectedFold = {
-            "11 Hammer 1199": "folds"
+            "player": "11 Hammer 1199",
+            "action": "folds"
         }
         check = checkAction(self.checkText)
         expectedCheck = {
-            "mweems1": "checks"
+            "player": "mweems1",
+            "action": "checks"
         }
         call = checkAction(self.callText)
         expectedCall = {
-            "sampik87": "calls",
+            "player": "sampik87",
+            "action": "calls",
             "amount": .10
         }
         raises = checkAction(self.raiseText)
         expectedRaise = {
-            "kookie4061": "raises",
+            "player": "kookie4061",
+            "action": "raises",
             "amount": .10
         }
         bet = checkAction(self.betText)
         expectedBet = {
-            "11 Hammer 1199": "bets",
+            "player": "11 Hammer 1199",
+            "action": "bets",
             "amount": .02
         }
+        blank = checkAction("Dealt to mweems1 [4c 8h]")
+        expectedBlank = {}
+
         self.failUnlessEqual(fold, expectedFold)
         self.failUnlessEqual(check, expectedCheck)
         self.failUnlessEqual(call, expectedCall)
         self.failUnlessEqual(raises, expectedRaise)
         self.failUnlessEqual(bet, expectedBet)
+        self.failUnlessEqual(blank, expectedBlank)
 
 
 class TestParsingFlop(unittest.TestCase):
@@ -183,7 +180,8 @@ class TestParsingWinningPotAmount(unittest.TestCase):
         self.failUnlessEqual(pot, expected)
 
 class TestSummaryInfo(unittest.TestCase):
-    text = "Seat 1: kookie4061 mucked [9d Ac] - a full house, Kings full of Nines",
+    text = "Seat 1: kookie4061 mucked [9d Ac] - "
+    "a full house, Kings full of Nines",
 
     def testGetMuckedCards(self):
         cards = getMuckedCards(self.text)

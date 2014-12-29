@@ -5,13 +5,10 @@ num = Word(nums)
 lett = Word(alphas)
 date = Combine(num + "/" + num + "/" + num)
 dollar = Literal("$").suppress()
-player = Group(Combine(OneOrMore(Word(alphanums)) +
-                       Optional("-" + OneOrMore(Word(alphanums)))) +
-               Optional(OneOrMore(Word(alphanums)))).setResultsName(
-    "playerName")
 
 decimalNum = Combine(Word(nums, nums + ",") +
                      Optional("." + OneOrMore(Word(nums))))
+
 
 
 seat = Group(Literal("Seat") + Word(nums) + Literal(":").suppress())
@@ -25,6 +22,9 @@ startAmount = seat + me + stack
 
 id = Literal("#").suppress() + OneOrMore(Word(nums))
 
+player = Group(Combine(OneOrMore(Word(alphanums)) +
+                       Optional("-" + OneOrMore(Word(alphanums)))) +
+               Optional(OneOrMore(Word(alphanums))))
 
 stakes = dollar + decimalNum + Literal("/").suppress() + \
             dollar + decimalNum
@@ -67,9 +67,9 @@ pot = dollar + decimalNum
 
 turn = Literal("[").suppress() + card + Literal("]").suppress()
 
-winningPlayer = player + hand.setResultsName("hand") + \
+winningPlayer = player + hand + \
                 Group(OneOrMore(lett) + Literal(",") +
-                      (OneOrMore(lett))).setResultsName("handText")
+                      (OneOrMore(lett)))
 
 winningPot = Literal("(").suppress() + dollar + decimalNum + \
              Literal(")").suppress()
