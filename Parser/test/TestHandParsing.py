@@ -26,38 +26,38 @@ class TestHandParser(unittest.TestCase):
         "button": 2,
         "cards": ["4c", "8h"],
         "preFlopAction": {
-            "11 Hammer 1199": {"folds", 0},
-            "AAlex777718": {"folds", 0},
-            "kookie4061": {"calls", 0.02},
-            "sampik87": {"calls", 0.02},
-            "Burda-sergey": {"calls", 0.01},
-            "mweems1": {"checks", 0}
+            "11 Hammer 1199": ["folds", 0],
+            "AAlex777718": ["folds", 0],
+            "kookie4061": ["calls", 0.02],
+            "sampik87": ["calls", 0.02],
+            "Burda-sergey": ["calls", 0.01],
+            "mweems1": ["checks", 0]
         },
         "flop": ["Kh", "Js", "9s"],
         "flopPotSize": .08,
         "flopAction": {
-            "Burda-sergey": {"checks", 0},
-            "mweems1": {"checks", 0},
-            "kookie4061": {"checks", 0},
-            "sampik87": {"checks", 0}
+            "Burda-sergey": ["checks", 0],
+            "mweems1": ["checks", 0],
+            "kookie4061": ["checks", 0],
+            "sampik87": ["checks", 0]
         },
         "turn": ["Kh", "Js", "9s", "Ks"],
         "turnPotSize": .08,
         "turnAction": {
-            "Burda-sergey": {"checks", 0},
-            "mweems1": {"checks", 0},
-            "kookie4061": {"checks", 0},
-            "sampik87": {"bets", 0.02},
-            "Burda-sergey": {"folds", 0},
-            "mweems1": {"folds", 0},
-            "kookie4061": {"calls", 0.02}
+            "Burda-sergey": ["checks", 0],
+            "mweems1": ["checks", 0],
+            "kookie4061": ["checks", 0],
+            "sampik87": ["bets", 0.02],
+            "Burda-sergey": ["folds", 0],
+            "mweems1": ["folds", 0],
+            "kookie4061": ["calls", 0.02]
         },
         "river": ["Kh", "Js", "9s", "Ks", "Kc"],
         "riverPotSize": .12,
         "riverAction": {
-            "kookie4061": {"checks", 0},
-            "sampik87": {"bets": 0.10},
-            "kookie4061": {"calls", 0.10}
+            "kookie4061": ["checks", 0],
+            "sampik87": ["bets", 0.10],
+            "kookie4061": ["calls", 0.10]
         },
         "winningInfo": {
             "player": "sampik87",
@@ -104,12 +104,12 @@ class TestHandParser(unittest.TestCase):
         actual = helper._preFlopAction(self.text)
         expected = {
             "preFlopAction": {
-                "11 Hammer 1199": {"folds", 0},
-                "AAlex777718": {"folds", 0},
-                "kookie4061": {"calls", 0.02},
-                "sampik87": {"calls", 0.02},
-                "Burda-sergey": {"calls", 0.01},
-                "mweems1": {"checks", 0}
+                "11 Hammer 1199": ["folds", 0.0],
+                "AAlex777718": ["folds", 0.0],
+                "kookie4061": ["calls", 0.02],
+                "sampik87": ["calls", 0.02],
+                "Burda-sergey": ["calls", 0.01],
+                "mweems1": ["checks", 0.0]
             }
         }
         self.failUnlessEqual(actual, expected)

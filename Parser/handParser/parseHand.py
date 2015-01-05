@@ -7,6 +7,7 @@ def getHand(text):
 
     return hand
 
+
 def _getHandInfo(line):
     try:
         hand = Parse.firstLineParser(line)
@@ -14,6 +15,7 @@ def _getHandInfo(line):
         hand = None
     if hand:
         return {"handInfo": hand}
+
 
 def _getPlayers(text):
     playerList = []
@@ -27,6 +29,7 @@ def _getPlayers(text):
 
     return {"players": playerList}
 
+
 def _getButton(text):
     try:
         button = Parse.getButton(text)
@@ -34,6 +37,7 @@ def _getButton(text):
         button = None
     if button:
         return button
+
 
 def _getHoleCards(text):
     try:
@@ -43,14 +47,25 @@ def _getHoleCards(text):
     if cards:
         return {"cards": cards}
 
+
 def _preFlopAction(text):
     actions = _actions(text)
-    preflop = []
-    for action in actions:
+    preflop = {}
+    for playerAction in actions:
+        try:
+            list = playerAction[0]
+            if list[0] == "FLOP":
+                break
+        except:
+            player = playerAction['player']
+            action = playerAction['action']
+            amount = playerAction.get('amount')
+            if not amount:
+                amount = 0.0
+            preflop[player] = [action, amount]
 
-        print action
+    return {"preFlopAction": preflop}
 
-    return {"preFlopActions": preflop}
 
 def _actions(text):
     actions = []
