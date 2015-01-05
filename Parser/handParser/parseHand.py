@@ -44,8 +44,16 @@ def _getHoleCards(text):
         return {"cards": cards}
 
 def _preFlopAction(text):
+    actions = _actions(text)
+    preflop = []
+    for action in actions:
+
+        print action
+
+    return {"preFlopActions": preflop}
+
+def _actions(text):
     actions = []
-    editedActions = []
     for line in text:
         try:
             action = Parse.checkAction(line)
@@ -53,6 +61,4 @@ def _preFlopAction(text):
             action = None
         if action:
             actions.append(action)
-    for action in actions:
-        print action
-    return {"preFlopAction": actions}
+    return actions

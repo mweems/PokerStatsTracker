@@ -74,4 +74,5 @@ winningPlayer = player + hand + \
 winningPot = Literal("(").suppress() + dollar + decimalNum + \
              Literal(")").suppress()
 
-delimeterText = Literal("***")
+delimeterText = Literal("***").suppress() + OneOrMore(lett) + \
+                Literal("***").suppress()

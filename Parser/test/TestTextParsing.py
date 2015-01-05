@@ -73,9 +73,9 @@ class TestStreetDelimeters(unittest.TestCase):
         flop = delimeterText(self.flopText)
         turn = delimeterText(self.turnText)
         river = delimeterText(self.riverText)
-        self.failUnlessEqual(flop, "***")
-        self.failUnlessEqual(turn, "***")
-        self.failUnlessEqual(river, "***")
+        self.failUnlessEqual(flop, "FLOP")
+        self.failUnlessEqual(turn, "TURN")
+        self.failUnlessEqual(river, "RIVER")
 
 
 class TestPreFlopAction(unittest.TestCase):
