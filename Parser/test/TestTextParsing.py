@@ -2,8 +2,9 @@ import unittest
 import datetime
 
 from Parser.textParser.quickLookParser import firstLineParser, parsePlayers, \
-    getButton, getHandValue, checkAction, getFlop, getPotSize, getNextCard,\
-    getWinningPlayer, getWinningPot, getMuckedCards, delimeterText
+    getButton, getHandValue, checkAction, getFlop, getFlopPotSize, \
+    getTurnPotSize, getRiverPotSize, getTurn,getRiver, getWinningPlayer, \
+    getWinningPot, getMuckedCards, delimeterText
 
 
 class TestParsingFirstLine(unittest.TestCase):
@@ -135,8 +136,8 @@ class TestParsingFlop(unittest.TestCase):
         self.failUnlessEqual(flop, expectedFlop)
 
     def testParsesPotSizeOnFlop(self):
-        potSize = getPotSize(self.text)
-        expected = {"potSize": .08}
+        potSize = getFlopPotSize(self.text)
+        expected = {"flopPotSize": .08}
         self.failUnlessEqual(potSize, expected)
 
 
@@ -145,13 +146,13 @@ class TestParsingTurn(unittest.TestCase):
 
     def testAddsTurnCardToBoard(self):
         cards = ["Kh", "Js", "9s"]
-        board = getNextCard(self.text, cards)
+        board = getTurn(self.text, cards)
         expected = ["Kh", "Js", "9s", "Ks"]
         self.failUnlessEqual(board, expected)
 
     def testParsesPotSizeOnTurn(self):
-        potSize = getPotSize(self.text)
-        expected = {"potSize": .08}
+        potSize = getTurnPotSize(self.text)
+        expected = {"turnPotSize": .08}
         self.failUnlessEqual(potSize, expected)
 
 
@@ -160,13 +161,13 @@ class TestParsingRiver(unittest.TestCase):
 
     def testAddsRiverCardToBoard(self):
         cards = ["Kh", "Js", "9s", "Ks"]
-        board = getNextCard(self.text, cards)
+        board = getRiver(self.text, cards)
         expected = ["Kh", "Js", "9s", "Ks", "Kc"]
         self.failUnlessEqual(board, expected)
 
     def testParsesPotSizeOnRiver(self):
-        potSize = getPotSize(self.text)
-        expected = {"potSize": .12}
+        potSize = getRiverPotSize(self.text)
+        expected = {"riverPotSize": .12}
         self.failUnlessEqual(potSize, expected)
 
 

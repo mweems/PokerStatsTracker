@@ -80,14 +80,31 @@ def getFlop(text):
     return [flop[0], flop[1], flop[2]]
 
 
-def getPotSize(text):
-    pot = parse.pot.searchString(text)[0][0]
-    return {"potSize": float(pot)}
+def getFlopPotSize(text):
+    pot = parse.flopPot.searchString(text)[0][0]
+    return {"flopPotSize": float(pot)}
 
 
-def getNextCard(text, cards):
+def getTurnPotSize(text):
+    pot = parse.turnPot.searchString(text)[0][0]
+    return {"turnPotSize": float(pot)}
+
+
+def getRiverPotSize(text):
+    pot = parse.riverPot.searchString(text)[0][0]
+    return {"riverPotSize": float(pot)}
+
+
+def getTurn(text, cards):
     turn = parse.turn.searchString(text)[0][0]
     cards.append(turn)
+    board = cards
+    return board
+
+
+def getRiver(text, cards):
+    river = parse.river.searchString(text, cards)
+    cards.append(river[0][1])
     board = cards
     return board
 

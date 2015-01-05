@@ -63,9 +63,20 @@ betAmount = dollar + decimalNum
 flop = Literal("[").suppress() + Group(card + card + card) + \
        Literal("]").suppress()
 
-pot = dollar + decimalNum
+flopPot = Group(Literal("*** FLOP ***") + flop +
+                Literal("(Total Pot:")).suppress() + betAmount
+
+turnPot = Group(Literal("*** TURN ***") + flop + Literal("[") + card +
+                Literal("]") + Literal("(Total Pot:")).suppress() + betAmount
+
+riverPot = Group(Literal("*** RIVER ***") + Literal('[') + card + card +
+                 card + card + Literal("] [") + card + Literal("]") +
+                 Literal("(Total Pot:")).suppress() + betAmount
 
 turn = Literal("[").suppress() + card + Literal("]").suppress()
+
+river = Group(Literal("[") + Group(card + card + card + card) +
+              Literal("]")).suppress() + Literal("[") + card + Literal("]")
 
 winningPlayer = player + hand + \
                 Group(OneOrMore(lett) + Literal(",") +

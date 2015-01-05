@@ -50,7 +50,7 @@ def _getHoleCards(text):
 
 def _preFlopAction(text):
     actions = _actions(text)
-    preflop = {}
+    preflop = []
     for playerAction in actions:
         try:
             list = playerAction[0]
@@ -62,10 +62,117 @@ def _preFlopAction(text):
             amount = playerAction.get('amount')
             if not amount:
                 amount = 0.0
-            preflop[player] = [action, amount]
+            playerAction = {player: [action, amount]}
+            preflop.append(playerAction)
 
     return {"preFlopAction": preflop}
 
+
+def _flopAction(text):
+    actions = _actions(text)
+    preflop = _preFlopAction(text)["preFlopAction"]
+    flop = []
+    for playerAction in actions:
+        try:
+            list = playerAction[0]
+            if list[0] == "TURN":
+                break
+        except:
+            player = playerAction['player']
+            action = playerAction['action']
+            amount = playerAction.get('amount')
+            if not amount:
+                amount = 0.0
+            playerAction = {player: [action, amount]}
+            flop.append(playerAction)
+
+    for action in preflop:
+        flop.remove(action)
+    return {"flopAction": flop}
+
+
+def _turnAction(text):
+    actions = _actions(text)
+    preflop = _preFlopAction(text)["preFlopAction"]
+    flop = _flopAction(text)["flopAction"]
+    turn = []
+    for playerAction in actions:
+        try:
+            list = playerAction[0]
+            if list[0] == "RIVER":
+                break
+        except:
+            player = playerAction['player']
+            action = playerAction['action']
+            amount = playerAction.get('amount')
+            if not amount:
+                amount = 0.0
+            playerAction = {player: [action, amount]}
+            turn.append(playerAction)
+
+    for action in preflop:
+        turn.remove(action)
+    for action in flop:
+        turn.remove(action)
+    return {"turnAction": turn}
+
+
+def _flop(text):
+    try:
+        flop = Parse.getFlop(text)
+    except:
+        flop = None
+    if flop:
+        return {"flop": flop}
+
+
+def _turn(text):
+    flop = _flop(text)
+    try:
+        turn = Parse.getTurn(text, flop['flop'])
+    except:
+        turn = None
+    if turn:
+        return {"turn": turn}
+
+
+def _river(text):
+    turn = _turn(text)
+    for line in text:
+        try:
+            river = Parse.getRiver(line, turn['turn'])
+        except:
+            river = None
+
+        if river:
+            return {"river": river}
+
+
+def _flopPotSize(text):
+    try:
+        pot = Parse.getFlopPotSize(text)
+    except:
+        pot = None
+    if pot:
+        return pot
+
+
+def _turnPotSize(text):
+    try:
+        pot = Parse.getTurnPotSize(text)
+    except:
+        pot = None
+    if pot:
+        return pot
+
+
+def _riverPotSize(text):
+    try:
+        pot = Parse.getRiverPotSize(text)
+    except:
+        pot = None
+    if pot:
+        return pot
 
 def _actions(text):
     actions = []
