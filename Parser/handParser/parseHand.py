@@ -117,6 +117,34 @@ def _turnAction(text):
     return {"turnAction": turn}
 
 
+def _riverAction(text):
+    actions = _actions(text)
+    preflop = _preFlopAction(text)["preFlopAction"]
+    flop = _flopAction(text)["flopAction"]
+    turn = _turnAction(text)["turnAction"]
+    river = []
+    for playerAction in actions:
+        try:
+            list = playerAction[0]
+            if list[0] == "SHOW DOWN":
+                break
+        except:
+            player = playerAction['player']
+            action = playerAction['action']
+            amount = playerAction.get('amount')
+            if not amount:
+                amount = 0.0
+            playerAction = {player: [action, amount]}
+            river.append(playerAction)
+    for action in preflop:
+        river.remove(action)
+    for action in flop:
+        river.remove(action)
+    for action in turn:
+        river.remove(action)
+    return {"riverAction": river}
+
+
 def _flop(text):
     try:
         flop = Parse.getFlop(text)

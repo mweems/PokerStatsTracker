@@ -141,6 +141,17 @@ class TestHandParser(unittest.TestCase):
         }
         self.failUnlessEqual(actual, expected)
 
+    def testRiverAction(self):
+        actual = helper._riverAction(self.text)
+        expected = {
+            "riverAction": [
+                {"kookie4061": ["checks", 0]},
+                {"sampik87": ["bets", 0.10]},
+                {"kookie4061": ["calls", 0.10]}
+            ]
+        }
+        self.failUnlessEqual(actual, expected)
+
     def testFlop(self):
         actual = helper._flop(self.text)
         expected = {
