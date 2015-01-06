@@ -1,6 +1,5 @@
 import Parser.textParser.quickLookParser as Parse
 
-
 def getHand(text):
     hand = {}
     hand['handInfo'] = _handInfo(text)

@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="152f9c6b-4576-4057-a71b-9e2edd444ad9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parser/test/TestHandParsing.py" afterPath="$PROJECT_DIR$/Parser/test/TestHandParsing.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parser/test/TestTextParsing.py" afterPath="$PROJECT_DIR$/Parser/test/TestTextParsing.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parser/test/TestSessionData.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parser/test/TestSessionParsing.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parser/sessionParser/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parser/sessionParser/parseSession.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parser/test/notes.txt" afterPath="$PROJECT_DIR$/Parser/test/notes.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parser/handParser/parseHand.py" afterPath="$PROJECT_DIR$/Parser/handParser/parseHand.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parser/helper/parserElements.py" afterPath="$PROJECT_DIR$/Parser/helper/parserElements.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parser/textParser/quickLookParser.py" afterPath="$PROJECT_DIR$/Parser/textParser/quickLookParser.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PokerHistory.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,77 +31,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="TestSessionParsing.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Parser/test/TestSessionParsing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.17396908" vertical-offset="0" max-vertical-offset="776">
+              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestHandParsing.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Parser/test/TestHandParsing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="3540">
+              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestSessionData.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Parser/test/TestSessionData.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10920">
+              <caret line="722" column="56" selection-start-line="722" selection-start-column="56" selection-end-line="722" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parseSession.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Parser/sessionParser/parseSession.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="parseHand.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Parser/handParser/parseHand.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4515">
-              <caret line="21" column="36" selection-start-line="5" selection-start-column="4" selection-end-line="21" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestHandParsing.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Parser/test/TestHandParsing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.189433" vertical-offset="2764" max-vertical-offset="3540">
-              <caret line="71" column="37" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestTextParsing.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Parser/test/TestTextParsing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8703704" vertical-offset="1873" max-vertical-offset="4020">
-              <caret line="146" column="27" selection-start-line="146" selection-start-column="27" selection-end-line="146" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="notes.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Parser/test/notes.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1099" max-vertical-offset="1875">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="quickLookParser.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Parser/textParser/quickLookParser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1662" max-vertical-offset="2415">
-              <caret line="131" column="4" selection-start-line="131" selection-start-column="4" selection-end-line="131" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#49#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parserElements.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Parser/helper/parserElements.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="690" max-vertical-offset="1530">
-              <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestHandData.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Parser/test/TestHandData.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="795">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4500">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -135,15 +115,18 @@
         <option value="$PROJECT_DIR$/Parser/test/TestHandData.txt" />
         <option value="$PROJECT_DIR$/Parser/textParser/Parser.py" />
         <option value="$PROJECT_DIR$/Parser/handParser/Parser.py" />
-        <option value="$PROJECT_DIR$/Parser/test/notes.txt" />
         <option value="$PROJECT_DIR$/Parser/test/TestHelperMethods.py" />
         <option value="$PROJECT_DIR$/Parser/helper/parserElements.py" />
         <option value="$PROJECT_DIR$/Parser/textParser/quickLookParser.py" />
         <option value="$PROJECT_DIR$/Parser/test/TestTextParsing.py" />
-        <option value="$PROJECT_DIR$/Parser/handParser/parseHand.py" />
         <option value="$PROJECT_DIR$/Parser/test/temp.py" />
         <option value="$PROJECT_DIR$/Parser/test/temp2.py" />
         <option value="$PROJECT_DIR$/Parser/test/TestHandParsing.py" />
+        <option value="$PROJECT_DIR$/Parser/test/notes.txt" />
+        <option value="$PROJECT_DIR$/Parser/test/TestSessionData.txt" />
+        <option value="$PROJECT_DIR$/Parser/handParser/parseHand.py" />
+        <option value="$PROJECT_DIR$/Parser/sessionParser/parseSession.py" />
+        <option value="$PROJECT_DIR$/Parser/test/TestSessionParsing.py" />
       </list>
     </option>
   </component>
@@ -451,24 +434,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="textParser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PokerHistory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PokerHistory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Parser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -487,7 +452,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="helper" />
+              <option name="myItemId" value="sessionParser" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -921,12 +886,12 @@
       <workItem from="1417519670477" duration="40484000" />
       <workItem from="1417689855840" duration="37921000" />
       <workItem from="1418131776620" duration="596000" />
-      <workItem from="1418132398453" duration="43030000" />
+      <workItem from="1418132398453" duration="44284000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122031000" />
+    <option name="totallyTimeSpent" value="123285000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1110,14 +1075,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Parser/handParser/parseHand.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4515">
-          <caret line="21" column="36" selection-start-line="5" selection-start-column="4" selection-end-line="21" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Parser/test/TestTextParsing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.8703704" vertical-offset="1873" max-vertical-offset="4020">
@@ -1125,14 +1082,6 @@
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parser/test/notes.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1099" max-vertical-offset="1875">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1162,10 +1111,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Parser/sessionParser/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="753">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parser/helper/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="753">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parser/test/notes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6572165" vertical-offset="0" max-vertical-offset="776">
+          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parser/sessionParser/parseSession.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parser/test/TestSessionData.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10920">
+          <caret line="722" column="56" selection-start-line="722" selection-start-column="56" selection-end-line="722" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parser/handParser/parseHand.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4500">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Parser/test/TestHandParsing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.189433" vertical-offset="2764" max-vertical-offset="3540">
-          <caret line="71" column="37" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="3540">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parser/test/TestSessionParsing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17396908" vertical-offset="0" max-vertical-offset="776">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
