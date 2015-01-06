@@ -4,7 +4,7 @@ import datetime
 from Parser.textParser.quickLookParser import firstLineParser, parsePlayers, \
     getButton, getHandValue, checkAction, getFlop, getFlopPotSize, \
     getTurnPotSize, getRiverPotSize, getTurn,getRiver, getWinningPlayer, \
-    getWinningPot, getMuckedCards, delimeterText
+    getWinningPot, getMucked, getPositionSummary, getFoldedPre, delimeterText
 
 
 class TestParsingFirstLine(unittest.TestCase):
@@ -54,7 +54,7 @@ class TestButtonLocation(unittest.TestCase):
 
     def testPlayerSeatsAccurate(self):
         button = getButton(self.text)
-        self.failUnlessEqual(button, {"Button": 2})
+        self.failUnlessEqual(button, 2)
 
 
 class TestParsingCards(unittest.TestCase):
@@ -137,37 +137,33 @@ class TestParsingFlop(unittest.TestCase):
 
     def testParsesPotSizeOnFlop(self):
         potSize = getFlopPotSize(self.text)
-        expected = {"flopPotSize": .08}
+        expected = .08
         self.failUnlessEqual(potSize, expected)
 
 
 class TestParsingTurn(unittest.TestCase):
     text = "*** TURN *** [Kh Js 9s] [Ks] (Total Pot: $0.08, 4 Players)"
 
-    def testAddsTurnCardToBoard(self):
-        cards = ["Kh", "Js", "9s"]
-        board = getTurn(self.text, cards)
-        expected = ["Kh", "Js", "9s", "Ks"]
-        self.failUnlessEqual(board, expected)
+    def testGetsTurn(self):
+        turn = getTurn(self.text)
+        self.failUnlessEqual(turn, "Ks")
 
     def testParsesPotSizeOnTurn(self):
         potSize = getTurnPotSize(self.text)
-        expected = {"turnPotSize": .08}
+        expected = .08
         self.failUnlessEqual(potSize, expected)
 
 
 class TestParsingRiver(unittest.TestCase):
     text = "*** RIVER *** [Kh Js 9s Ks] [Kc] (Total Pot: $0.12, 2 Players)"
 
-    def testAddsRiverCardToBoard(self):
-        cards = ["Kh", "Js", "9s", "Ks"]
-        board = getRiver(self.text, cards)
-        expected = ["Kh", "Js", "9s", "Ks", "Kc"]
-        self.failUnlessEqual(board, expected)
+    def testGetsRiver(self):
+        river = getRiver(self.text)
+        self.failUnlessEqual(river, "Kc")
 
     def testParsesPotSizeOnRiver(self):
         potSize = getRiverPotSize(self.text)
-        expected = {"riverPotSize": .12}
+        expected = .12
         self.failUnlessEqual(potSize, expected)
 
 
@@ -185,26 +181,83 @@ class TestParsingWinningPlayerAndHand(unittest.TestCase):
 
 
 class TestParsingWinningPotAmount(unittest.TestCase):
-    text = "sampik87 wins the pot ($0.31)"
+    text = "Total pot $0.32 | Rake $0.01"
 
     def testGetWinningPot(self):
         pot = getWinningPot(self.text)
-        expected = {
-            "pot": .31
-        }
+        expected = .31
         self.failUnlessEqual(pot, expected)
 
 class TestSummaryInfo(unittest.TestCase):
-    text = "Seat 1: kookie4061 mucked [9d Ac] - "
-    "a full house, Kings full of Nines",
+    text1 = "Seat 1: kookie4061 mucked [9d Ac] - "
+    "a full house, Kings full of Nines"
+    text2 = "Seat 2: sampik87 (button) showed [Jc 8d] and won ($0.31) " \
+            "with a full house, Kings full of Jacks"
+    text3 = "Seat 3: Burda-sergey (small blind) folded on the Turn"
+    text4 = "Seat 4: mweems1 (big blind) folded on the Turn"
+    text5 = "Seat 5: 11 Hammer 1199 didn't bet (folded)"
+    text6 = "Seat 6: AAlex777718 didn't bet (folded)"
+    text7 = "Seat 3: 11 Hammer 1199 mucked [Ad Ah]"
 
-    def testGetMuckedCards(self):
-        cards = getMuckedCards(self.text)
-        expected = {
+    def testMucked(self):
+        cards1 = getMucked(self.text1)
+        expected1 = {
             "player": "kookie4061",
-            "hand": ["9d", "Ac"]
+            "action": "mucked",
+            "info": ["9d", "Ac"]
         }
-        self.failUnlessEqual(cards, expected)
+        cards2 = getMucked(self.text2)
+        cards3 = getMucked(self.text7)
+        expected3 = {
+            "player": "11 Hammer 1199",
+            "action": "mucked",
+            "info": ["Ad", "Ah"]
+        }
+        self.failUnlessEqual(cards1, expected1)
+        self.failUnlessEqual(cards2, [])
+        self.failUnlessEqual(cards3, expected3)
+
+    def testPositions(self):
+        cards2 = getPositionSummary(self.text2)
+        expected2 = {
+            "player": "sampik87",
+            "action": "showed",
+            "info": None
+        }
+        cards3 = getPositionSummary(self.text3)
+        expected3 = {
+            "player": "Burda-sergey",
+            "action": "folded",
+            "info": "Turn"
+        }
+        cards4 = getPositionSummary(self.text4)
+        expected4 = {
+            "player": "mweems1",
+            "action": "folded",
+            "info": "Turn"
+        }
+        cards5 = getPositionSummary(self.text5)
+        self.failUnlessEqual(cards2, expected2)
+        self.failUnlessEqual(cards3, expected3)
+        self.failUnlessEqual(cards4, expected4)
+        self.failUnlessEqual(cards5, [])
+
+    def testFoldedPre(self):
+        cards5 = getFoldedPre(self.text5)
+        expected5 = {
+            "player": "11 Hammer 1199",
+            "action": "didn",
+        }
+        cards6 = getFoldedPre(self.text6)
+        expected6 = {
+            "player": "AAlex777718",
+            "action": "didn",
+        }
+        cards1 = getFoldedPre(self.text1)
+
+        self.failUnlessEqual(cards5, expected5)
+        self.failUnlessEqual(cards6, expected6)
+        self.failUnlessEqual(cards1, [])
 
 if __name__ == '__main__':
     unittest.main()

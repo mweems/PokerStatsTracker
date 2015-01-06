@@ -3,21 +3,36 @@ import Parser.textParser.quickLookParser as Parse
 
 def getHand(text):
     hand = {}
-    methods = [_getHandInfo, _getPlayers, _getButton]
-
+    hand['handInfo'] = _handInfo(text)
+    hand['players'] = _players(text)
+    hand['button'] = _button(text)
+    hand['cards'] = _holeCards(text)
+    hand['preFlopAction'] = _preFlopAction(text)
+    hand['flop'] = _flop(text)
+    hand['flopPotSize'] = _flopPotSize(text)
+    hand['flopAction'] = _flopAction(text)
+    hand['turn'] = _turn(text)
+    hand['turnPotSize'] = _turnPotSize(text)
+    hand['turnAction'] = _turnAction(text)
+    hand['river'] = _river(text)
+    hand['riverPotSize'] = _riverPotSize(text)
+    hand['riverAction'] = _riverAction(text)
+    hand['winningInfo'] = _winningInfo(text)
+    hand['wonPotSize'] = _winningPotSize(text)
+    hand['summary'] = _summary(text)
     return hand
 
 
-def _getHandInfo(line):
+def _handInfo(text):
     try:
-        hand = Parse.firstLineParser(line)
+        hand = Parse.firstLineParser(text)
     except:
         hand = None
     if hand:
-        return {"handInfo": hand}
+        return hand
 
 
-def _getPlayers(text):
+def _players(text):
     playerList = []
     for line in text:
         try:
@@ -27,10 +42,10 @@ def _getPlayers(text):
         if players:
             playerList.append(players)
 
-    return {"players": playerList}
+    return playerList
 
 
-def _getButton(text):
+def _button(text):
     try:
         button = Parse.getButton(text)
     except:
@@ -39,13 +54,25 @@ def _getButton(text):
         return button
 
 
-def _getHoleCards(text):
+def _holeCards(text):
     try:
         cards = Parse.getHandValue(text)
     except:
         cards = None
     if cards:
-        return {"cards": cards}
+        return cards
+
+
+def _actions(text):
+    actions = []
+    for line in text:
+        try:
+            action = Parse.checkAction(line)
+        except:
+            action = None
+        if action:
+            actions.append(action)
+    return actions
 
 
 def _preFlopAction(text):
@@ -65,12 +92,12 @@ def _preFlopAction(text):
             playerAction = {player: [action, amount]}
             preflop.append(playerAction)
 
-    return {"preFlopAction": preflop}
+    return preflop
 
 
 def _flopAction(text):
     actions = _actions(text)
-    preflop = _preFlopAction(text)["preFlopAction"]
+    preflop = _preFlopAction(text)
     flop = []
     for playerAction in actions:
         try:
@@ -88,13 +115,13 @@ def _flopAction(text):
 
     for action in preflop:
         flop.remove(action)
-    return {"flopAction": flop}
+    return flop
 
 
 def _turnAction(text):
     actions = _actions(text)
-    preflop = _preFlopAction(text)["preFlopAction"]
-    flop = _flopAction(text)["flopAction"]
+    preflop = _preFlopAction(text)
+    flop = _flopAction(text)
     turn = []
     for playerAction in actions:
         try:
@@ -114,14 +141,14 @@ def _turnAction(text):
         turn.remove(action)
     for action in flop:
         turn.remove(action)
-    return {"turnAction": turn}
+    return turn
 
 
 def _riverAction(text):
     actions = _actions(text)
-    preflop = _preFlopAction(text)["preFlopAction"]
-    flop = _flopAction(text)["flopAction"]
-    turn = _turnAction(text)["turnAction"]
+    preflop = _preFlopAction(text)
+    flop = _flopAction(text)
+    turn = _turnAction(text)
     river = []
     for playerAction in actions:
         try:
@@ -142,7 +169,7 @@ def _riverAction(text):
         river.remove(action)
     for action in turn:
         river.remove(action)
-    return {"riverAction": river}
+    return river
 
 
 def _flop(text):
@@ -151,29 +178,27 @@ def _flop(text):
     except:
         flop = None
     if flop:
-        return {"flop": flop}
+        return flop
 
 
 def _turn(text):
-    flop = _flop(text)
     try:
-        turn = Parse.getTurn(text, flop['flop'])
+        turn = Parse.getTurn(text)
     except:
         turn = None
     if turn:
-        return {"turn": turn}
+        return turn
 
 
 def _river(text):
-    turn = _turn(text)
     for line in text:
         try:
-            river = Parse.getRiver(line, turn['turn'])
+            river = Parse.getRiver(line)
         except:
             river = None
 
         if river:
-            return {"river": river}
+            return river
 
 
 def _flopPotSize(text):
@@ -202,13 +227,70 @@ def _riverPotSize(text):
     if pot:
         return pot
 
-def _actions(text):
-    actions = []
+
+
+def _winningInfo(text):
+    try:
+        winner = Parse.getWinningPlayer(text)
+    except:
+        winner = None
+    if winner:
+        return winner
+
+
+def _winningPotSize(text):
+    try:
+        pot = Parse.getWinningPot(text)
+    except:
+        pot = None
+    if pot:
+        return pot
+
+
+
+def _summary(text):
+    summary = []
     for line in text:
-        try:
-            action = Parse.checkAction(line)
-        except:
-            action = None
-        if action:
-            actions.append(action)
-    return actions
+        mucked = _getMuckedCards(line)
+        positional = _getPositionSummary(line)
+        foldedPre = _getFoldedPre(line)
+        if mucked:
+            summary.append(_setCards(mucked))
+        if positional:
+            summary.append(_setCards(positional))
+        if foldedPre:
+            summary.append(_setCards(foldedPre))
+
+    return summary
+
+def _setCards(text):
+    info = text.get('info')
+    if text['action'] == 'didn':
+        text['action'] = 'folded'
+    if not info:
+        text['info'] = "-"
+    return {text['player']: [text['action'], text['info']]}
+
+def _getFoldedPre(text):
+    try:
+        folded = Parse.getFoldedPre(text)
+    except:
+        folded = None
+    if folded:
+        return folded
+
+def _getPositionSummary(text):
+    try:
+        summary = Parse.getPositionSummary(text)
+    except:
+        summary = None
+    if summary:
+        return summary
+
+def _getMuckedCards(text):
+    try:
+        mucked = Parse.getMucked(text)
+    except:
+        mucked = None
+    if mucked:
+        return mucked

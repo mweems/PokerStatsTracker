@@ -37,7 +37,7 @@ playerLocation = seat + Literal(":") + \
                     Optional(OneOrMore(Word(alphanums)))).\
                         setResultsName("playerName") + stack
 
-button = Literal('#').suppress() + num
+button = Literal('The button is in seat #').suppress() + num
 
 set = Optional(Literal("A")) + Optional(Literal("K")) + \
       Optional(Literal("Q")) + Optional(Literal("J"))
@@ -82,8 +82,16 @@ winningPlayer = player + hand + \
                 Group(OneOrMore(lett) + Literal(",") +
                       (OneOrMore(lett)))
 
-winningPot = Literal("(").suppress() + dollar + decimalNum + \
-             Literal(")").suppress()
+winningPot = Literal('Total pot').suppress() + dollar + decimalNum + \
+             Literal('| Rake').suppress() + dollar + decimalNum
+
+mucked = Group(seat + Literal(":")).suppress() + player + hand
+
+positionSummary = Group(seat + Literal(":")).suppress() + player + \
+                  Group(Literal("(") + Group(OneOrMore(lett)) +
+                        Literal(")")).suppress() + Group(OneOrMore(lett))
+
+foldedPre = Group(seat + Literal(":")).suppress() + player
 
 delimeterText = Literal("***").suppress() + OneOrMore(lett) + \
                 Literal("***").suppress()

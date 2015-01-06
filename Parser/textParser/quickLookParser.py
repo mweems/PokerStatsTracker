@@ -32,7 +32,7 @@ def parsePlayers(text):
 
 def getButton(text):
     seat = parse.button.searchString(text)[0][0]
-    return {"Button": int(seat)}
+    return int(seat)
 
 
 def getHandValue(text):
@@ -41,15 +41,44 @@ def getHandValue(text):
     return holeCards
 
 
-def getMuckedCards(text):
-    cards = getHandValue(text)
-    playerText = parse.player.searchString(text)
-    player = playerText[1][0]
-    player.pop(-1)
-    return {
-        "player": " ".join(player),
-        "hand": [cards[0], cards[1]]
-    }
+def getMucked(text):
+    mucked = parse.mucked.searchString(text)
+    if mucked:
+        cards = mucked[0]
+        player = mucked[0][0]
+        action = player.pop(-1)
+        return {
+            "player": " ".join(player),
+            "action": action,
+            "info": [cards[1], cards[2]]
+        }
+    return []
+def getPositionSummary(text):
+    summary = parse.positionSummary.searchString(text)
+    if summary:
+        player = summary[0][0]
+        action = summary[0][1][0]
+        return {
+            "player": " ".join(player),
+            "action": action,
+            "info": _getInfo(summary[0][1])
+        }
+    return []
+def _getInfo(list):
+    if len(list) > 1:
+        return list.pop(-1)
+    return None
+
+def getFoldedPre(text):
+    summary = parse.foldedPre.searchString(text)
+    action = summary[0][0].pop(-1)
+    player = summary[0][0]
+    if action == "didn":
+        return {
+            "player": " ".join(player),
+            "action": action
+        }
+    return []
 
 
 def checkAction(text):
@@ -82,31 +111,27 @@ def getFlop(text):
 
 def getFlopPotSize(text):
     pot = parse.flopPot.searchString(text)[0][0]
-    return {"flopPotSize": float(pot)}
+    return float(pot)
 
 
 def getTurnPotSize(text):
     pot = parse.turnPot.searchString(text)[0][0]
-    return {"turnPotSize": float(pot)}
+    return float(pot)
 
 
 def getRiverPotSize(text):
     pot = parse.riverPot.searchString(text)[0][0]
-    return {"riverPotSize": float(pot)}
+    return float(pot)
 
 
-def getTurn(text, cards):
+def getTurn(text):
     turn = parse.turn.searchString(text)[0][0]
-    cards.append(turn)
-    board = cards
-    return board
+    return turn
 
 
-def getRiver(text, cards):
-    river = parse.river.searchString(text, cards)
-    cards.append(river[0][1])
-    board = cards
-    return board
+def getRiver(text):
+    river = parse.river.searchString(text)
+    return river[0][1]
 
 
 def getWinningPlayer(text):
@@ -122,9 +147,8 @@ def getWinningPlayer(text):
 
 def getWinningPot(text):
     pot = parse.winningPot.searchString(text)
-    return {
-        "pot": float(pot[0][0])
-    }
+    wonPot = float(pot[0][0]) - float(pot[0][1])
+    return wonPot
 
 def delimeterText(text):
     text = parse.delimeterText.searchString(text)[0]
