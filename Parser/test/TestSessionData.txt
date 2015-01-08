@@ -721,3 +721,6 @@ Seat 3: Burda-sergey showed [Kh Ts] and won ($0.15) with a pair of Tens
 Seat 4: mweems1 didn't bet (folded)
 Seat 5: 11 Hammer 1199 (button) mucked [Th Jc] - a pair of Tens
 Seat 6: AAlex777718 (small blind) folded before the Flop
+
+
+

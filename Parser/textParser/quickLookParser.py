@@ -136,19 +136,24 @@ def getRiver(text):
 
 def getWinningPlayer(text):
     winner = parse.winningPlayer.searchString(text)
-    winner[0][0].pop()
-    player = winner[0][0]
-    return {
-        "player": " ".join(player),
-        "hand": [winner[0][1], winner[0][2]],
-        "handText": " ".join(winner[0][3])
-    }
+    for info in winner:
+        pot = info[0].pop()
+        if pot == "pot":
+            info[0].pop()
+            info[0].pop()
+            return {
+                "player": " ".join(info[0]),
+                "wonPotSize": float(info[1])
+            }
 
 
-def getWinningPot(text):
-    pot = parse.winningPot.searchString(text)
-    wonPot = float(pot[0][0]) - float(pot[0][1])
-    return wonPot
+def getWinningHand(text):
+    hand = parse.winningHand.searchString(text)
+    for info in hand:
+        shows = info[0].pop()
+        if shows == 'shows':
+            wonHand = [info[1], info[2]]
+            return wonHand
 
 def delimeterText(text):
     text = parse.delimeterText.searchString(text)[0]

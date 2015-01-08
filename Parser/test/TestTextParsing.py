@@ -4,7 +4,7 @@ import datetime
 from Parser.textParser.quickLookParser import firstLineParser, parsePlayers, \
     getButton, getHandValue, checkAction, getFlop, getFlopPotSize, \
     getTurnPotSize, getRiverPotSize, getTurn,getRiver, getWinningPlayer, \
-    getWinningPot, getMucked, getPositionSummary, getFoldedPre, delimeterText
+    getWinningHand, getMucked, getPositionSummary, getFoldedPre, delimeterText
 
 
 class TestParsingFirstLine(unittest.TestCase):
@@ -168,25 +168,37 @@ class TestParsingRiver(unittest.TestCase):
 
 
 class TestParsingWinningPlayerAndHand(unittest.TestCase):
-    text = "sampik87 shows [Jc 8d] a full house, Kings full of Jacks"
+    text = "sampik87 wins the pot ($0.31) with a full house, Kings full of Jacks"
+    text2 = "kookie4061 wins the pot ($0.16)"
+    wrongText = "Seat 1: kookie4061 ($8.51)"
 
     def testGetsWinningPlayer(self):
         player = getWinningPlayer(self.text)
+        player2 = getWinningPlayer(self.text2)
+        nonePlayer = getWinningPlayer(self.wrongText)
         expected = {
             "player": "sampik87",
-            "hand": ["Jc", "8d"],
-            "handText": "a full house , Kings full of Jacks"
+            "wonPotSize": .31,
         }
+        expected2 = {
+            "player": "kookie4061",
+            "wonPotSize": .16,
+            }
+        self.failUnlessEqual(nonePlayer, None)
         self.failUnlessEqual(player, expected)
+        self.failUnlessEqual(player2, expected2)
 
 
-class TestParsingWinningPotAmount(unittest.TestCase):
-    text = "Total pot $0.32 | Rake $0.01"
+class TestParsingWinningHand(unittest.TestCase):
+    text = "sampik87 shows [Jc 8d] a full house, Kings full of Jacks"
+    wrongText = "Dealt to mweems1 [4c 8h]"
 
-    def testGetWinningPot(self):
-        pot = getWinningPot(self.text)
-        expected = .31
-        self.failUnlessEqual(pot, expected)
+    def testWinningHand(self):
+        hand = getWinningHand(self.text)
+        noneHand = getWinningHand((self.wrongText))
+        expected = ["Jc", "8d"]
+        self.failUnlessEqual(hand, expected)
+        self.failUnlessEqual(noneHand, None)
 
 class TestSummaryInfo(unittest.TestCase):
     text1 = "Seat 1: kookie4061 mucked [9d Ac] - "

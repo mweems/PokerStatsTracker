@@ -1,0 +1,43 @@
+Full Tilt Poker Game #34944307295: Table Ard (New to the Game, 6 max) - NL Hold'em - $0.01/$0.02 - 08:45:43 ET - 2014/11/21
+Seat 1: kookie4061 ($8.29)
+Seat 2: sampik87 ($1.77)
+Seat 3: Burda-sergey ($2.02)
+Seat 4: mweems1 ($1.96)
+Seat 5: 11 Hammer 1199 ($1.34)
+Seat 6: AAlex777718 ($2.24)
+AAlex777718 posts the small blind of $0.01
+kookie4061 posts the big blind of $0.02
+The button is in seat #5
+*** HOLE CARDS ***
+Dealt to mweems1 [3c Tc]
+sampik87 calls $0.02
+Burda-sergey folds
+mweems1 folds
+11 Hammer 1199 calls $0.02
+AAlex777718 calls $0.01
+kookie4061 checks
+*** FLOP *** [5s Ks 7c] (Total Pot: $0.08, 4 Players)
+AAlex777718 bets $0.02
+kookie4061 calls $0.02
+sampik87 has 20 seconds left to act
+sampik87 folds
+11 Hammer 1199 folds
+*** TURN *** [5s Ks 7c] [9d] (Total Pot: $0.12, 2 Players)
+AAlex777718 bets $0.02
+kookie4061 calls $0.02
+*** RIVER *** [5s Ks 7c 9d] [9c] (Total Pot: $0.16, 2 Players)
+AAlex777718 checks
+kookie4061 bets $0.16
+AAlex777718 folds
+Uncalled bet of $0.16 returned to kookie4061
+kookie4061 mucks
+kookie4061 wins the pot ($0.16)
+*** SUMMARY ***
+Total pot $0.16 | Rake $0
+Board: [5s Ks 7c 9d 9c]
+Seat 1: kookie4061 (big blind) collected ($0.16), mucked
+Seat 2: sampik87 folded on the Flop
+Seat 3: Burda-sergey didn't bet (folded)
+Seat 4: mweems1 didn't bet (folded)
+Seat 5: 11 Hammer 1199 (button) folded on the Flop
+Seat 6: AAlex777718 (small blind) folded on the River

@@ -1,5 +1,6 @@
 import Parser.textParser.quickLookParser as Parse
 
+
 def getHand(text):
     hand = {}
     hand['handInfo'] = _handInfo(text)
@@ -17,7 +18,7 @@ def getHand(text):
     hand['riverPotSize'] = _riverPotSize(text)
     hand['riverAction'] = _riverAction(text)
     hand['winningInfo'] = _winningInfo(text)
-    hand['wonPotSize'] = _winningPotSize(text)
+    hand['winningHand'] = _winningHand(text)
     hand['summary'] = _summary(text)
     return hand
 
@@ -237,14 +238,14 @@ def _winningInfo(text):
         return winner
 
 
-def _winningPotSize(text):
+def _winningHand(text):
     try:
-        pot = Parse.getWinningPot(text)
+        pot = Parse.getWinningHand(text)
     except:
         pot = None
     if pot:
         return pot
-
+    return []
 
 
 def _summary(text):
@@ -262,6 +263,7 @@ def _summary(text):
 
     return summary
 
+
 def _setCards(text):
     info = text.get('info')
     if text['action'] == 'didn':
@@ -269,6 +271,7 @@ def _setCards(text):
     if not info:
         text['info'] = "-"
     return {text['player']: [text['action'], text['info']]}
+
 
 def _getFoldedPre(text):
     try:
@@ -278,6 +281,7 @@ def _getFoldedPre(text):
     if folded:
         return folded
 
+
 def _getPositionSummary(text):
     try:
         summary = Parse.getPositionSummary(text)
@@ -285,6 +289,7 @@ def _getPositionSummary(text):
         summary = None
     if summary:
         return summary
+
 
 def _getMuckedCards(text):
     try:

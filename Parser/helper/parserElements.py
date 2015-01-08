@@ -78,12 +78,11 @@ turn = Literal("[").suppress() + card + Literal("]").suppress()
 river = Group(Literal("[") + Group(card + card + card + card) +
               Literal("]")).suppress() + Literal("[") + card + Literal("]")
 
-winningPlayer = player + hand + \
-                Group(OneOrMore(lett) + Literal(",") +
-                      (OneOrMore(lett)))
+winningPlayer = player + Literal("(").suppress() + betAmount + \
+                Literal(")").suppress()
 
-winningPot = Literal('Total pot').suppress() + dollar + decimalNum + \
-             Literal('| Rake').suppress() + dollar + decimalNum
+winningHand = player + Literal("[").suppress() + card + card + \
+              Literal("]").suppress()
 
 mucked = Group(seat + Literal(":")).suppress() + player + hand
 
