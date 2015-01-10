@@ -1,0 +1,466 @@
+Full Tilt Poker Game #34944957553: Table Freq (6 max) - NL Hold'em - $0.05/$0.10 - 12:25:59 ET - 2014/11/21
+Seat 1: serb_ru ($5.91)
+Seat 2: bcaalin ($10)
+Seat 3: all1n4funn ($9.60)
+Seat 4: hdig5tallesdb ($10.79)
+Seat 5: mweems1 ($10)
+Seat 6: Cbass9 ($10)
+serb_ru posts the small blind of $0.05
+bcaalin posts the big blind of $0.10
+mweems1 posts $0.10
+The button is in seat #6
+*** HOLE CARDS ***
+Dealt to mweems1 [9h Ah]
+all1n4funn folds
+hdig5tallesdb folds
+mweems1 checks
+Cbass9 raises to $0.40
+serb_ru folds
+hdig5tallesdb is sitting out
+bcaalin folds
+bcaalin adds $0.10
+mweems1 folds
+Uncalled bet of $0.30 returned to Cbass9
+Cbass9 mucks
+Cbass9 wins the pot ($0.35)
+*** SUMMARY ***
+Total pot $0.35 | Rake $0
+Seat 1: serb_ru (small blind) folded before the Flop
+Seat 2: bcaalin (big blind) folded before the Flop
+Seat 3: all1n4funn didn't bet (folded)
+Seat 4: hdig5tallesdb didn't bet (folded)
+Seat 5: mweems1 folded before the Flop
+Seat 6: Cbass9 (button) collected ($0.35), mucked
+
+
+
+Full Tilt Poker Game #34944959511: Table Freq (6 max) - NL Hold'em - $0.05/$0.10 - 12:26:33 ET - 2014/11/21
+Seat 1: serb_ru ($5.86)
+Seat 2: bcaalin ($10)
+Seat 3: all1n4funn ($9.60)
+Seat 4: hdig5tallesdb ($10.79), is sitting out
+Seat 5: mweems1 ($9.90)
+Seat 6: Cbass9 ($10.25)
+bcaalin posts the small blind of $0.05
+all1n4funn posts the big blind of $0.10
+The button is in seat #1
+*** HOLE CARDS ***
+Dealt to mweems1 [Jh 6d]
+mweems1 folds
+Cbass9 has 15 seconds left to act
+Cbass9 folds
+serb_ru folds
+bcaalin raises to $0.35
+all1n4funn has 15 seconds left to act
+all1n4funn calls $0.25
+*** FLOP *** [Jc Ts 8s] (Total Pot: $0.70, 2 Players)
+bcaalin checks
+all1n4funn has 15 seconds left to act
+all1n4funn bets $0.35
+bcaalin calls $0.35
+*** TURN *** [Jc Ts 8s] [4c] (Total Pot: $1.40, 2 Players)
+bcaalin checks
+all1n4funn has 15 seconds left to act
+all1n4funn bets $0.90
+bcaalin folds
+bcaalin adds $0.70
+Uncalled bet of $0.90 returned to all1n4funn
+all1n4funn mucks
+all1n4funn wins the pot ($1.33)
+*** SUMMARY ***
+Total pot $1.40 | Rake $0.07
+Board: [Jc Ts 8s 4c]
+Seat 1: serb_ru (button) didn't bet (folded)
+Seat 2: bcaalin (small blind) folded on the Turn
+Seat 3: all1n4funn (big blind) collected ($1.33), mucked
+Seat 4: hdig5tallesdb is sitting out
+Seat 5: mweems1 didn't bet (folded)
+Seat 6: Cbass9 didn't bet (folded)
+
+
+
+Full Tilt Poker Game #34944963315: Table Freq (6 max) - NL Hold'em - $0.05/$0.10 - 12:27:37 ET - 2014/11/21
+Seat 1: serb_ru ($5.86)
+Seat 2: bcaalin ($10)
+Seat 3: all1n4funn ($10.23)
+Seat 4: hdig5tallesdb ($10.79), is sitting out
+Seat 5: mweems1 ($9.90)
+Seat 6: Cbass9 ($10.25)
+all1n4funn posts the small blind of $0.05
+mweems1 posts the big blind of $0.10
+The button is in seat #2
+*** HOLE CARDS ***
+Dealt to mweems1 [Qs 5c]
+Cbass9 folds
+serb_ru folds
+bcaalin raises to $0.20
+all1n4funn has 15 seconds left to act
+all1n4funn folds
+mweems1 folds
+Uncalled bet of $0.10 returned to bcaalin
+bcaalin mucks
+bcaalin wins the pot ($0.25)
+*** SUMMARY ***
+Total pot $0.25 | Rake $0
+Seat 1: serb_ru didn't bet (folded)
+Seat 2: bcaalin (button) collected ($0.25), mucked
+Seat 3: all1n4funn (small blind) folded before the Flop
+Seat 4: hdig5tallesdb is sitting out
+Seat 5: mweems1 (big blind) folded before the Flop
+Seat 6: Cbass9 didn't bet (folded)
+
+
+
+Full Tilt Poker Game #34944964427: Table Freq (6 max) - NL Hold'em - $0.05/$0.10 - 12:27:56 ET - 2014/11/21
+Seat 1: serb_ru ($5.86)
+Seat 2: bcaalin ($10.15)
+Seat 3: all1n4funn ($10.18)
+Seat 4: hdig5tallesdb ($10.79), is sitting out
+Seat 5: mweems1 ($9.80)
+Seat 6: Cbass9 ($10.25)
+mweems1 posts the small blind of $0.05
+Cbass9 posts the big blind of $0.10
+The button is in seat #3
+*** HOLE CARDS ***
+Dealt to mweems1 [Td 4c]
+serb_ru folds
+bcaalin folds
+all1n4funn calls $0.10
+mweems1 folds
+Cbass9 checks
+*** FLOP *** [Qh 2c Kh] (Total Pot: $0.25, 2 Players)
+Cbass9 has 15 seconds left to act
+Cbass9 checks
+all1n4funn bets $0.12
+Cbass9 folds
+Uncalled bet of $0.12 returned to all1n4funn
+all1n4funn mucks
+all1n4funn wins the pot ($0.24)
+*** SUMMARY ***
+Total pot $0.25 | Rake $0.01
+Board: [Qh 2c Kh]
+Seat 1: serb_ru didn't bet (folded)
+Seat 2: bcaalin didn't bet (folded)
+Seat 3: all1n4funn (button) collected ($0.24), mucked
+Seat 4: hdig5tallesdb is sitting out
+Seat 5: mweems1 (small blind) folded before the Flop
+Seat 6: Cbass9 (big blind) folded on the Flop
+
+
+
+Full Tilt Poker Game #34944966775: Table Freq (6 max) - NL Hold'em - $0.05/$0.10 - 12:28:37 ET - 2014/11/21
+Seat 1: serb_ru ($5.86)
+Seat 2: bcaalin ($10.15)
+Seat 3: all1n4funn ($10.32)
+Seat 4: hdig5tallesdb ($10.79), is sitting out
+Seat 5: mweems1 ($9.75)
+Seat 6: Cbass9 ($10.15)
+Cbass9 posts the small blind of $0.05
+serb_ru posts the big blind of $0.10
+The button is in seat #5
+*** HOLE CARDS ***
+Dealt to mweems1 [8h Ac]
+bcaalin folds
+all1n4funn folds
+mweems1 folds
+Cbass9 has 15 seconds left to act
+Cbass9 folds
+Uncalled bet of $0.05 returned to serb_ru
+serb_ru mucks
+serb_ru wins the pot ($0.10)
+*** SUMMARY ***
+Total pot $0.10 | Rake $0
+Seat 1: serb_ru (big blind) collected ($0.10), mucked
+Seat 2: bcaalin didn't bet (folded)
+Seat 3: all1n4funn didn't bet (folded)
+Seat 4: hdig5tallesdb is sitting out
+Seat 5: mweems1 (button) didn't bet (folded)
+Seat 6: Cbass9 (small blind) folded before the Flop
+
+
+
+Full Tilt Poker Game #34944968001: Table Freq (6 max) - NL Hold'em - $0.05/$0.10 - 12:28:59 ET - 2014/11/21
+Seat 1: serb_ru ($5.91)
+Seat 2: bcaalin ($10.15)
+Seat 3: all1n4funn ($10.32)
+Seat 4: hdig5tallesdb ($10.79), is sitting out
+Seat 5: mweems1 ($9.75)
+Seat 6: Cbass9 ($10.10)
+serb_ru posts the small blind of $0.05
+bcaalin posts the big blind of $0.10
+The button is in seat #6
+*** HOLE CARDS ***
+Dealt to mweems1 [6h Qc]
+all1n4funn calls $0.10
+mweems1 folds
+Cbass9 folds
+serb_ru raises to $0.30
+bcaalin folds
+all1n4funn calls $0.20
+*** FLOP *** [Qh 8c 7c] (Total Pot: $0.70, 2 Players)
+serb_ru has 15 seconds left to act
+serb_ru bets $0.40
+all1n4funn has 15 seconds left to act
+all1n4funn folds
+Uncalled bet of $0.40 returned to serb_ru
+serb_ru mucks
+serb_ru wins the pot ($0.67)
+*** SUMMARY ***
+Total pot $0.70 | Rake $0.03
+Board: [Qh 8c 7c]
+Seat 1: serb_ru (small blind) collected ($0.67), mucked
+Seat 2: bcaalin (big blind) folded before the Flop
+Seat 3: all1n4funn folded on the Flop
+Seat 4: hdig5tallesdb is sitting out
+Seat 5: mweems1 didn't bet (folded)
+Seat 6: Cbass9 (button) didn't bet (folded)
+
+
+
+Full Tilt Poker Game #34944971135: Table Freq (6 max) - NL Hold'em - $0.05/$0.10 - 12:29:54 ET - 2014/11/21
+Seat 1: serb_ru ($6.28)
+Seat 2: bcaalin ($10.05)
+Seat 3: all1n4funn ($10.02)
+Seat 4: hdig5tallesdb ($10.79), is sitting out
+Seat 5: mweems1 ($9.75)
+Seat 6: Cbass9 ($10.10)
+bcaalin posts the small blind of $0.05
+all1n4funn posts the big blind of $0.10
+The button is in seat #1
+hdig5tallesdb has returned
+*** HOLE CARDS ***
+Dealt to mweems1 [8s 8h]
+mweems1 has 15 seconds left to act
+mweems1 raises to $0.30
+Cbass9 folds
+serb_ru has 15 seconds left to act
+serb_ru calls $0.30
+bcaalin has 15 seconds left to act
+bcaalin folds
+all1n4funn calls $0.20
+*** FLOP *** [Qc Td Kh] (Total Pot: $0.95, 3 Players)
+all1n4funn checks
+mweems1 has been disconnected
+mweems1 has 15 seconds left to act
+mweems1 has reconnected
+mweems1 has requested TIME
+mweems1 checks
+serb_ru bets $0.70
+all1n4funn calls $0.70
+mweems1 folds
+*** TURN *** [Qc Td Kh] [5c] (Total Pot: $2.35, 2 Players)
+all1n4funn has 15 seconds left to act
+all1n4funn checks
+serb_ru has 15 seconds left to act
+serb_ru bets $1.50
+all1n4funn folds
+Uncalled bet of $1.50 returned to serb_ru
+serb_ru mucks
+serb_ru wins the pot ($2.24)
+*** SUMMARY ***
+Total pot $2.35 | Rake $0.11
+Board: [Qc Td Kh 5c]
+Seat 1: serb_ru (button) collected ($2.24), mucked
+Seat 2: bcaalin (small blind) folded before the Flop
+Seat 3: all1n4funn (big blind) folded on the Turn
+Seat 4: hdig5tallesdb is sitting out
+Seat 5: mweems1 folded on the Flop
+Seat 6: Cbass9 didn't bet (folded)
+
+
+
+Full Tilt Poker Game #34944977410: Table Freq (6 max) - NL Hold'em - $0.05/$0.10 - 12:31:45 ET - 2014/11/21
+Seat 1: serb_ru ($7.52)
+Seat 2: bcaalin ($10)
+Seat 3: all1n4funn ($9.02)
+Seat 4: hdig5tallesdb ($10.79)
+Seat 5: mweems1 ($9.45)
+Seat 6: Cbass9 ($10.10)
+all1n4funn posts the small blind of $0.05
+hdig5tallesdb posts the big blind of $0.10
+The button is in seat #2
+*** HOLE CARDS ***
+Dealt to mweems1 [Qs 5c]
+mweems1 folds
+Cbass9 folds
+serb_ru has 15 seconds left to act
+serb_ru folds
+bcaalin raises to $0.20
+all1n4funn folds
+hdig5tallesdb folds
+Uncalled bet of $0.10 returned to bcaalin
+bcaalin mucks
+bcaalin wins the pot ($0.25)
+*** SUMMARY ***
+Total pot $0.25 | Rake $0
+Seat 1: serb_ru didn't bet (folded)
+Seat 2: bcaalin (button) collected ($0.25), mucked
+Seat 3: all1n4funn (small blind) folded before the Flop
+Seat 4: hdig5tallesdb (big blind) folded before the Flop
+Seat 5: mweems1 didn't bet (folded)
+Seat 6: Cbass9 didn't bet (folded)
+
+
+
+Full Tilt Poker Game #34944979374: Table Freq (6 max) - NL Hold'em - $0.05/$0.10 - 12:32:20 ET - 2014/11/21
+Seat 1: serb_ru ($7.52)
+Seat 2: bcaalin ($10.15)
+Seat 3: all1n4funn ($8.97)
+Seat 4: hdig5tallesdb ($10.69)
+Seat 5: mweems1 ($9.45)
+Seat 6: Cbass9 ($10.10)
+hdig5tallesdb posts the small blind of $0.05
+mweems1 posts the big blind of $0.10
+The button is in seat #3
+*** HOLE CARDS ***
+Dealt to mweems1 [3c 9d]
+Cbass9 folds
+serb_ru folds
+hdig5tallesdb has been disconnected
+bcaalin has 15 seconds left to act
+bcaalin folds
+hdig5tallesdb has reconnected
+all1n4funn has 15 seconds left to act
+all1n4funn calls $0.10
+hdig5tallesdb calls $0.05
+mweems1 checks
+*** FLOP *** [6s 6d Qd] (Total Pot: $0.30, 3 Players)
+hdig5tallesdb checks
+mweems1 checks
+all1n4funn checks
+*** TURN *** [6s 6d Qd] [3h] (Total Pot: $0.30, 3 Players)
+hdig5tallesdb has 15 seconds left to act
+hdig5tallesdb has requested TIME
+hdig5tallesdb has timed out
+hdig5tallesdb checks
+mweems1 bets $0.10
+all1n4funn folds
+hdig5tallesdb folds
+Uncalled bet of $0.10 returned to mweems1
+mweems1 mucks
+mweems1 wins the pot ($0.29)
+*** SUMMARY ***
+Total pot $0.30 | Rake $0.01
+Board: [6s 6d Qd 3h]
+Seat 1: serb_ru didn't bet (folded)
+Seat 2: bcaalin didn't bet (folded)
+Seat 3: all1n4funn (button) folded on the Turn
+Seat 4: hdig5tallesdb (small blind) folded on the Turn
+Seat 5: mweems1 (big blind) collected ($0.29), mucked
+Seat 6: Cbass9 didn't bet (folded)
+
+
+
+Full Tilt Poker Game #34944985155: Table Freq (6 max) - NL Hold'em - $0.05/$0.10 - 12:34:04 ET - 2014/11/21
+Seat 1: serb_ru ($7.52)
+Seat 2: bcaalin ($10.15)
+Seat 3: all1n4funn ($8.87)
+Seat 4: hdig5tallesdb ($10.59)
+Seat 5: mweems1 ($9.64)
+Seat 6: Cbass9 ($10.10)
+mweems1 posts the small blind of $0.05
+Cbass9 posts the big blind of $0.10
+The button is in seat #4
+*** HOLE CARDS ***
+Dealt to mweems1 [7s 3d]
+serb_ru folds
+bcaalin folds
+all1n4funn folds
+hdig5tallesdb raises to $0.30
+mweems1 folds
+Cbass9 folds
+Uncalled bet of $0.20 returned to hdig5tallesdb
+hdig5tallesdb mucks
+hdig5tallesdb wins the pot ($0.25)
+*** SUMMARY ***
+Total pot $0.25 | Rake $0
+Seat 1: serb_ru didn't bet (folded)
+Seat 2: bcaalin didn't bet (folded)
+Seat 3: all1n4funn didn't bet (folded)
+Seat 4: hdig5tallesdb (button) collected ($0.25), mucked
+Seat 5: mweems1 (small blind) folded before the Flop
+Seat 6: Cbass9 (big blind) folded before the Flop
+
+
+
+Full Tilt Poker Game #34944986615: Table Freq (6 max) - NL Hold'em - $0.05/$0.10 - 12:34:30 ET - 2014/11/21
+Seat 1: serb_ru ($7.52)
+Seat 2: bcaalin ($10.15)
+Seat 3: all1n4funn ($8.87)
+Seat 4: hdig5tallesdb ($10.74)
+Seat 5: mweems1 ($9.59)
+Seat 6: Cbass9 ($10)
+Cbass9 posts the small blind of $0.05
+serb_ru posts the big blind of $0.10
+The button is in seat #5
+*** HOLE CARDS ***
+Dealt to mweems1 [Th Qc]
+bcaalin has 15 seconds left to act
+bcaalin folds
+all1n4funn raises to $0.35
+hdig5tallesdb folds
+mweems1 folds
+Cbass9 folds
+Cbass9 adds $0.05
+serb_ru folds
+Uncalled bet of $0.25 returned to all1n4funn
+all1n4funn mucks
+all1n4funn wins the pot ($0.25)
+*** SUMMARY ***
+Total pot $0.25 | Rake $0
+Seat 1: serb_ru (big blind) folded before the Flop
+Seat 2: bcaalin didn't bet (folded)
+Seat 3: all1n4funn collected ($0.25), mucked
+Seat 4: hdig5tallesdb didn't bet (folded)
+Seat 5: mweems1 (button) didn't bet (folded)
+Seat 6: Cbass9 (small blind) folded before the Flop
+
+
+
+Full Tilt Poker Game #34944988428: Table Freq (6 max) - NL Hold'em - $0.05/$0.10 - 12:35:03 ET - 2014/11/21
+Seat 1: serb_ru ($7.42)
+Seat 2: bcaalin ($10.15)
+Seat 3: all1n4funn ($9.02)
+Seat 4: hdig5tallesdb ($10.74)
+Seat 5: mweems1 ($9.59)
+Seat 6: Cbass9 ($10)
+serb_ru posts the small blind of $0.05
+bcaalin posts the big blind of $0.10
+The button is in seat #6
+*** HOLE CARDS ***
+Dealt to mweems1 [8d Jh]
+all1n4funn folds
+hdig5tallesdb folds
+mweems1 folds
+Cbass9 raises to $0.30
+serb_ru has 15 seconds left to act
+serb_ru raises to $1
+bcaalin folds
+Cbass9 has 15 seconds left to act
+Cbass9 raises to $2.80
+serb_ru has 15 seconds left to act
+serb_ru calls $1.80
+*** FLOP *** [4s Ks Qs] (Total Pot: $5.70, 2 Players)
+serb_ru checks
+Cbass9 has 15 seconds left to act
+Cbass9 checks
+*** TURN *** [4s Ks Qs] [8s] (Total Pot: $5.70, 2 Players)
+serb_ru has 15 seconds left to act
+serb_ru bets $2.50
+Cbass9 folds
+Cbass9 adds $2.80
+Uncalled bet of $2.50 returned to serb_ru
+serb_ru mucks
+serb_ru wins the pot ($5.42)
+*** SUMMARY ***
+Total pot $5.70 | Rake $0.28
+Board: [4s Ks Qs 8s]
+Seat 1: serb_ru (small blind) collected ($5.42), mucked
+Seat 2: bcaalin (big blind) folded before the Flop
+Seat 3: all1n4funn didn't bet (folded)
+Seat 4: hdig5tallesdb didn't bet (folded)
+Seat 5: mweems1 didn't bet (folded)
+Seat 6: Cbass9 (button) folded on the Turn
+
+
+

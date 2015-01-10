@@ -1,5 +1,16 @@
 import Parser.handParser.parseHand as handParser
 
+
+def getMultipleSessions(sessions):
+    hands = []
+    for session in sessions:
+        text = open(session, "r").readlines()
+        actual = getSession(text)
+        hands.append(actual)
+
+    return hands
+
+
 def getSession(text):
     session = []
     handList = []

@@ -120,3 +120,48 @@ firstHand = {
         {"AAlex777718": ["folded", "-"]}
     ]
 }
+
+infoMissing = {
+    'winningInfo': {
+        'player': 'sergei 2507',
+        'wonPotSize': 0.05},
+    'flop': None,
+    'flopPotSize': None,
+    'turn': None,
+    'riverPotSize': None,
+    'button': 4,
+    'handInfo': {
+        'date': datetime.date(2014, 11, 21),
+        'id': 34944317861,
+        'stakes': {
+            'big_blind': 0.02,
+            'small_blind': 0.01}},
+    'turnAction': [],
+    'players': [
+        {'sergei 2507': 0.7},
+        {'sampik87': 1.5},
+        {'Burda-sergey': 2.46},
+        {'mweems1': 1.97},
+        {'11 Hammer 1199': 1.18},
+        {'AAlex777718': 2.18},
+        {'sergei 2507 collected': 0.05}],
+    'riverAction': [],
+    'summary': [
+        {'sampik87': ['folded', '-']},
+        {'Burda-sergey': ['folded', '-']},
+        {'mweems1': ['folded', '-']},
+        {'11 Hammer 1199': ['folded', 'Flop']},
+        {'AAlex777718': ['folded', 'Flop']}],
+    'winningHand': [],
+    'turnPotSize': None,
+    'preFlopAction': [
+        {'sergei 2507': ['raises', 0.07]},
+        {'sampik87': ['folds', 0.0]},
+        {'Burda-sergey': ['folds', 0.0]},
+        {'mweems1': ['folds', 0.0]},
+        {'11 Hammer 1199': ['folds', 0.0]},
+        {'AAlex777718': ['folds', 0.0]}],
+    'cards': ['7d', '8h'],
+    'river': None,
+    'flopAction': []
+}

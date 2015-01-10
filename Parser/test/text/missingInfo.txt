@@ -1,0 +1,30 @@
+Full Tilt Poker Game #34944317861: Table Ard (New to the Game, 6 max) - NL Hold'em - $0.01/$0.02 - 08:49:58 ET - 2014/11/21
+Seat 1: sergei 2507 ($0.70)
+Seat 2: sampik87 ($1.50)
+Seat 3: Burda-sergey ($2.46)
+Seat 4: mweems1 ($1.97)
+Seat 5: 11 Hammer 1199 ($1.18)
+Seat 6: AAlex777718 ($2.18)
+11 Hammer 1199 posts the small blind of $0.01
+AAlex777718 posts the big blind of $0.02
+sergei 2507 posts $0.02
+The button is in seat #4
+*** HOLE CARDS ***
+Dealt to mweems1 [7d 8h]
+sergei 2507 raises to $0.07
+sampik87 folds
+Burda-sergey folds
+mweems1 folds
+11 Hammer 1199 folds
+AAlex777718 folds
+Uncalled bet of $0.05 returned to sergei 2507
+sergei 2507 mucks
+sergei 2507 wins the pot ($0.05)
+*** SUMMARY ***
+Total pot $0.05 | Rake $0
+Seat 1: sergei 2507 collected ($0.05), mucked
+Seat 2: sampik87 didn't bet (folded)
+Seat 3: Burda-sergey didn't bet (folded)
+Seat 4: mweems1 (button) didn't bet (folded)
+Seat 5: 11 Hammer 1199 (small blind) folded before the Flop
+Seat 6: AAlex777718 (big blind) folded before the Flop

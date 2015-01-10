@@ -6,10 +6,13 @@ from Parser.test import ExpectedHandData as hand
 
 
 class TestHandParser(unittest.TestCase):
-    text1 = open("Parser/test/TestHandData.txt", "r").readlines()
-    text2 = open("Parser/test/MissingInfoData.txt", "r").readlines()
+    text1 = open("Parser/test/text/TestHandData.txt", "r").readlines()
+    text2 = open("Parser/test/text/missingWinningInfo.txt", "r").readlines()
+    text3 = open("Parser/test/text/missingInfo.txt", "r").readlines()
+
     expected2 = hand.missingWinningInfo
     expected1 = hand.firstHand
+    expected3 = hand.infoMissing
 
     def testHand(self):
         actual = helper._handInfo(self.text1)
