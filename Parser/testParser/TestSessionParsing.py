@@ -7,8 +7,6 @@ class TestMultipleSessionParsing(unittest.TestCase):
         sessions = ["Parser/test/text/TestSessionData.txt",
                     "Parser/test/text/SessionTwo.txt"]
         hands = parser.getMultipleSessions(sessions)
-
-
         self.failUnlessEqual(len(hands), 2)
         self.failUnlessEqual(len(hands[1]), 12)
         self.failUnlessEqual(len(hands[0]), 16)

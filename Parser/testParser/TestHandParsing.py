@@ -2,7 +2,7 @@ import unittest
 import datetime
 from Parser.handParser.parseHand import getHand
 from Parser.handParser import parseHand as helper
-from Parser.test import ExpectedHandData as hand
+from Parser.testParser import ExpectedHandData as hand
 
 
 class TestHandParser(unittest.TestCase):
