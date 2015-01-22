@@ -24,8 +24,10 @@ def firstLineParser(text):
 def parsePlayers(text):
     player = parse.playerLocation.searchString(text)
     stack = parse.stack.searchString(text)[0][0]
+    seat = int(player[0][1])
     playerInfo = {
-        " ".join(player[0][3]): float(stack)
+        " ".join(player[0][3]): {"seat": seat,
+                                 "stack": float(stack)}
     }
     return playerInfo
 
@@ -54,12 +56,14 @@ def getMucked(text):
         }
     return []
 def getPositionSummary(text):
+    print "text", text
     summary = parse.positionSummary.searchString(text)
+    print "summary", summary
     if summary:
         player = summary[0][0]
         action = summary[0][1][0]
         return {
-            "player": " ".join(player),
+            "player": "".join(player),
             "action": action,
             "info": _getInfo(summary[0][1])
         }

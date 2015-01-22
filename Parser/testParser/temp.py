@@ -28,5 +28,30 @@
         {'winningInfo': {'player': 'mweems1', 'wonPotSize': 0.29}, 'flop': ['6s', '6d', 'Qd'], 'flopPotSize': 0.3, 'turn': '3h', 'riverPotSize': None, 'button': 3, 'handInfo': {'date': datetime.date(2014, 11, 21), 'id': 34944979374, 'stakes': {'big_blind': 0.1, 'small_blind': 0.05}}, 'turnAction': [{'hdig5tallesdb': ['checks', 0.0]}, {'mweems1': ['bets', 0.1]}, {'all1n4funn': ['folds', 0.0]}, {'hdig5tallesdb': ['folds', 0.0]}], 'players': [{'bcaalin': 10.15}, {'all1n4funn': 8.97}, {'hdig5tallesdb': 10.69}, {'mweems1': 9.45}, {'Cbass9': 10.1}], 'riverAction': [], 'summary': [{'bcaalin': ['folded', '-']}, {'all1n4funn': ['folded', 'Turn']}, {'hdig5tallesdb': ['folded', 'Turn']}, {'mweems1': ['collected', '-']}, {'Cbass9': ['folded', '-']}], 'winningHand': [], 'turnPotSize': 0.3, 'preFlopAction': [{'Cbass9': ['folds', 0.0]}, {'bcaalin': ['folds', 0.0]}, {'all1n4funn': ['calls', 0.1]}, {'hdig5tallesdb': ['calls', 0.05]}, {'mweems1': ['checks', 0.0]}], 'cards': ['3c', '9d'], 'river': None, 'flopAction': [{'hdig5tallesdb': ['checks', 0.0]}, {'mweems1': ['checks', 0.0]}, {'all1n4funn': ['checks', 0.0]}]},
         {'winningInfo': {'player': 'hdig5tallesdb', 'wonPotSize': 0.25}, 'flop': None, 'flopPotSize': None, 'turn': None, 'riverPotSize': None, 'button': 4, 'handInfo': {'date': datetime.date(2014, 11, 21), 'id': 34944985155, 'stakes': {'big_blind': 0.1, 'small_blind': 0.05}}, 'turnAction': [], 'players': [{'bcaalin': 10.15}, {'all1n4funn': 8.87}, {'hdig5tallesdb': 10.59}, {'mweems1': 9.64}, {'Cbass9': 10.1}], 'riverAction': [], 'summary': [{'bcaalin': ['folded', '-']}, {'all1n4funn': ['folded', '-']}, {'hdig5tallesdb': ['collected', '-']}, {'mweems1': ['folded', 'Flop']}, {'Cbass9': ['folded', 'Flop']}], 'winningHand': [], 'turnPotSize': None, 'preFlopAction': [{'bcaalin': ['folds', 0.0]}, {'all1n4funn': ['folds', 0.0]}, {'hdig5tallesdb': ['raises', 0.3]}, {'mweems1': ['folds', 0.0]}, {'Cbass9': ['folds', 0.0]}], 'cards': ['7s', '3d'], 'river': None, 'flopAction': []},
         {'winningInfo': {'player': 'all1n4funn', 'wonPotSize': 0.25}, 'flop': None, 'flopPotSize': None, 'turn': None, 'riverPotSize': None, 'button': 5, 'handInfo': {'date': datetime.date(2014, 11, 21), 'id': 34944986615, 'stakes': {'big_blind': 0.1, 'small_blind': 0.05}}, 'turnAction': [], 'players': [{'bcaalin': 10.15}, {'all1n4funn': 8.87}, {'hdig5tallesdb': 10.74}, {'mweems1': 9.59}, {'Cbass9': 10.0}, {'all1n4funn collected': 0.25}], 'riverAction': [], 'summary': [{'bcaalin': ['folded', '-']}, {'hdig5tallesdb': ['folded', '-']}, {'mweems1': ['folded', '-']}, {'Cbass9': ['folded', 'Flop']}], 'winningHand': [], 'turnPotSize': None, 'preFlopAction': [{'bcaalin': ['folds', 0.0]}, {'all1n4funn': ['raises', 0.35]}, {'hdig5tallesdb': ['folds', 0.0]}, {'mweems1': ['folds', 0.0]}, {'Cbass9': ['folds', 0.0]}], 'cards': ['Th', 'Qc'], 'river': None, 'flopAction': []},
-        {'winningInfo': {'player': 'ru', 'wonPotSize': 5.42}, 'flop': ['4s', 'Ks', 'Qs'], 'flopPotSize': 5.7, 'turn': '8s', 'riverPotSize': None, 'button': 6, 'handInfo': {'date': datetime.date(2014, 11, 21), 'id': 34944988428, 'stakes': {'big_blind': 0.1, 'small_blind': 0.05}}, 'turnAction': [{'Cbass9': ['folds', 0.0]}], 'players': [{'bcaalin': 10.15}, {'all1n4funn': 9.02}, {'hdig5tallesdb': 10.74}, {'mweems1': 9.59}, {'Cbass9': 10.0}], 'riverAction': [], 'summary': [{'bcaalin': ['folded', 'Flop']}, {'all1n4funn': ['folded', '-']}, {'hdig5tallesdb': ['folded', '-']}, {'mweems1': ['folded', '-']}, {'Cbass9': ['folded', 'Turn']}], 'winningHand': [], 'turnPotSize': 5.7, 'preFlopAction': [{'all1n4funn': ['folds', 0.0]}, {'hdig5tallesdb': ['folds', 0.0]}, {'mweems1': ['folds', 0.0]}, {'Cbass9': ['raises', 0.3]}, {'bcaalin': ['folds', 0.0]}, {'Cbass9': ['raises', 2.8]}], 'cards': ['8d', 'Jh'], 'river': None, 'flopAction': [{'Cbass9': ['checks', 0.0]}]}
-    ]]
+        {
+            'winningInfo': {
+                'player': 'ru',
+                'wonPotSize': 5.42},
+            'flop': ['4s', 'Ks', 'Qs'],
+            'flopPotSize': 5.7,
+            'turn': '8s',
+            'riverPotSize': None,
+            'button': 6,
+            'handInfo': {
+                'date': datetime.date(2014, 11, 21),
+                'id': 34944988428,
+                'stakes': {
+                    'big_blind': 0.1,
+                    'small_blind': 0.05}},
+            'turnAction': [
+                {'Cbass9': ['folds', 0.0]}],
+            'players': [
+                {'bcaalin': 10.15},
+                {'all1n4funn': 9.02},
+                {'hdig5tallesdb': 10.74},
+                {'mweems1': 9.59},
+                {'Cbass9': 10.0}],
+            'riverAction': [],
+            'summary': [{'bcaalin': ['folded', 'Flop']}, {'all1n4funn': ['folded', '-']}, {'hdig5tallesdb': ['folded', '-']}, {'mweems1': ['folded', '-']}, {'Cbass9': ['folded', 'Turn']}], 'winningHand': [], 'turnPotSize': 5.7, 'preFlopAction': [{'all1n4funn': ['folds', 0.0]}, {'hdig5tallesdb': ['folds', 0.0]}, {'mweems1': ['folds', 0.0]}, {'Cbass9': ['raises', 0.3]}, {'bcaalin': ['folds', 0.0]}, {'Cbass9': ['raises', 2.8]}], 'cards': ['8d', 'Jh'], 'river': None, 'flopAction': [{'Cbass9': ['checks', 0.0]}]}
+    ]
+]

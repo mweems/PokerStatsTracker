@@ -31,22 +31,31 @@ class TestParsingFirstLine(unittest.TestCase):
 
 class TestParsingPreflop(unittest.TestCase):
     player1 = "Seat 1: kookie4061 ($8.51)"
-    player2 = "Seat 2: sampik87 ($1.62)"
     player3 = "Seat 3: Burda-sergey ($2.41)"
-    player4 = "Seat 4: mweems1 ($2)"
     player5 = "Seat 5: 11 Hammer 1199 ($1.38)"
-    player6 = "Seat 6: AAlex777718 ($1.79)"
+    player6 = "Seat 1: serb_ru ($7.42)"
 
     def testPlayerMatchesMoneyAndSeat(self):
         player1 = parsePlayers(self.player1)
-        expected1 = {"kookie4061": 8.51}
+        expected1 = {"kookie4061": {
+            "seat": 1,
+            "stack": 8.51}}
         player2 = parsePlayers(self.player3)
-        expected2 = {"Burda-sergey": 2.41}
+        expected2 = {"Burda-sergey": {
+            "seat": 3,
+            "stack": 2.41}}
         player3 = parsePlayers(self.player5)
-        expected3 = {"11 Hammer 1199": 1.38}
+        expected3 = {"11 Hammer 1199": {
+            "seat": 5,
+            "stack": 1.38}}
+        player4 = parsePlayers(self.player6)
+        expected4 = {"serb_ru": {
+            "seat": 1,
+            "stack": 7.42}}
         self.failUnlessEqual(player1, expected1)
         self.failUnlessEqual(player2, expected2)
         self.failUnlessEqual(player3, expected3)
+        self.failUnlessEqual(player4, expected4)
 
 
 class TestButtonLocation(unittest.TestCase):
@@ -249,9 +258,16 @@ class TestSummaryInfo(unittest.TestCase):
             "info": "Turn"
         }
         cards5 = getPositionSummary(self.text5)
+        cards6 = getPositionSummary(self.text7)
+        expected6 = {
+            "player": "11 Hammer 1199",
+            "action": "mucked",
+            "info": None
+        }
         self.failUnlessEqual(cards2, expected2)
         self.failUnlessEqual(cards3, expected3)
         self.failUnlessEqual(cards4, expected4)
+        self.failUnlessEqual(cards6, expected6)
         self.failUnlessEqual(cards5, [])
 
     def testFoldedPre(self):

@@ -22,20 +22,25 @@ startAmount = seat + me + stack
 
 id = Literal("#").suppress() + OneOrMore(Word(nums))
 
-player = Group(Combine(OneOrMore(Word(alphanums)) +
-                       Optional("-" + OneOrMore(Word(alphanums)))) +
-               Optional(OneOrMore(Word(alphanums))))
+player = Group(OneOrMore(Word(alphanums)) +
+                       Optional(" " + OneOrMore(Word(alphanums))) +
+                       Optional(" " + OneOrMore(Word(alphanums))) +
+                       Optional(" " + OneOrMore(Word(alphanums))) +
+                       Optional("-" + OneOrMore(Word(alphanums))) +
+                       Optional("_" + OneOrMore(Word(alphanums))) +
+                       Optional(OneOrMore(Word(alphanums))))
 
 stakes = dollar + decimalNum + Literal("/").suppress() + \
             dollar + decimalNum
 
 seat = Literal("Seat") + num
 stack = Literal("(").suppress() + dollar + decimalNum + Literal(")").suppress()
-playerLocation = seat + Literal(":") + \
-                 Group(Combine(OneOrMore(Word(alphanums)) +
-                 Optional("-" + OneOrMore(Word(alphanums)))) +
-                    Optional(OneOrMore(Word(alphanums)))).\
-                        setResultsName("playerName") + stack
+playerLocation = seat + Literal(":") + Group(Combine(
+    OneOrMore(Word(alphanums)) + Optional("-" + OneOrMore(Word(alphanums))) +
+    Optional("_" + OneOrMore(Word(alphanums))) +
+    Optional(" " + OneOrMore(Word(alphanums))) +
+    Optional(" " + OneOrMore(Word(alphanums))) +
+    Optional(OneOrMore(Word(alphanums))))) + stack
 
 button = Literal('The button is in seat #').suppress() + num
 
@@ -86,10 +91,7 @@ winningHand = player + Literal("[").suppress() + card + card + \
 
 mucked = Group(seat + Literal(":")).suppress() + player + hand
 
-positionSummary = Group(seat + Literal(":")).suppress() + player + \
-                  Group(Literal("(") + Group(OneOrMore(lett)) +
-                        Literal(")")).suppress() + Group(OneOrMore(lett))
-
+positionSummary = Group(seat + Literal(":")).suppress() + player
 foldedPre = Group(seat + Literal(":")).suppress() + player
 
 delimeterText = Literal("***").suppress() + OneOrMore(lett) + \
