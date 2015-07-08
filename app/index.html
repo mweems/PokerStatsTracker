@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head ng-app="sessionResults">
+        <title>Results Page</title>
+        <script src="angular.min.js"></script>
+        <script src="results.js"></script>
+    </head>
+    <body>
+        <div data-ng-controller="resultsController as results">
+            <div>
+                Player {{results.playerName}}
+            </div>
+            <div>
+                Total Won/Lost {{results.totalWinLoss}}
+            </div>
+        </div>
+
+    </body>
+</html>
